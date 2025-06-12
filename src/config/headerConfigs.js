@@ -4,8 +4,8 @@ export const headerConfigs = {
         menuItems: [
             {label: 'НАШИ МАСТЕРА', href: '/masters'},
             {label: 'УСЛУГИ', href: '/services'},
-            {label: 'АКЦИИ', href: '/promos'},
-            {label: 'КОНТАКТЫ', href: '/contacts'},
+            {label: 'АКЦИИ', href: '#promos'},
+            {label: 'КОНТАКТЫ', href: '#contacts'},
         ],
     },
     masters: {

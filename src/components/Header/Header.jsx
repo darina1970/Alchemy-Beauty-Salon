@@ -42,7 +42,6 @@ const Header = ({ backgroundClass, menuItems}) => {
                     </div>
                     
                 </div>
-
             </div>
             <div className="container">
                 <div className={styles.textBlock}>
@@ -54,91 +53,5 @@ const Header = ({ backgroundClass, menuItems}) => {
     );
 };
 
-
-
-
-
-// const Header = ({ backgroundSrc, menuItems}) => {
-//     return (
-//         <header className={styles.header}>
-//             <img src={backgroundSrc} alt="Баннер" className={styles.bannerImage} />
-//             <div className={styles.overlay}>
-//                 <div className={styles.logo}>
-//                     <img src={logo} alt="Логотип" />
-//                 </div>
-//                 <nav className={styles.nav}>
-//                     <ul>
-//                         {menuItems.map((item) => (
-//                             <li key={item.href}>
-//                                 <a href={item.href}>{item.label}</a>
-//                             </li>
-//                         ))}
-//                     </ul>
-//                 </nav>
-//                 <div className={styles.socials}>
-//                     <div className={styles.socialWrapper}>
-//                         <img src={vk} alt="Иконка социальной сети ВКонтакте" />
-//                     </div>
-//                     <div className={styles.socialWrapper}>
-//                         <img src={tg} alt="Иконка социальной сети Telegram" />
-//                     </div>
-//                     <div className={styles.socialWrapper}>
-//                         <img src={phone} alt="Иконка телефонной трубки" />
-//                     </div>                    
-//                 </div>
-//             </div>
-//             <div className="container">
-//                 <div className={styles.textBlock}>
-//                     <h1>ЛАБОРАТОРИЯ КРАСОТЫ АЛХИМИЯ</h1>
-//                     <button className={styles.btn}>ОНЛАЙН-ЗАПИСЬ</button>
-//                 </div>
-//             </div>
-//         </header>
-//     );
-// };
-
-
-// const Header = ({ bannerImages, menuItems}) => {
-//     return (
-//         <header className={styles.header}>
-//             <picture className={styles.bannerPicture}>
-//                 <source media="(max-width: 575px)" srcSet={bannerImages.mobile} />
-//                 <source media="(max-width: 1000px)" srcSet={bannerImages.tablet} />
-//                 <img src={bannerImages.desktop} alt="Баннер" className={styles.bannerImage} loading="lazy" />
-//             </picture>
-//             <div className={styles.overlay}>
-//                 <div className={styles.logo}>
-//                     <img src={logo} alt="Логотип" />
-//                 </div>
-//                 <nav className={styles.nav}>
-//                     <ul>
-//                         {menuItems.map((item) => (
-//                             <li key={item.href}>
-//                                 <a href={item.href}>{item.label}</a>
-//                             </li>
-//                         ))}
-//                     </ul>
-//                 </nav>
-//                 <div className={styles.socials}>
-//                     <div className={styles.socialWrapper}>
-//                         <img src={vk} alt="Иконка социальной сети ВКонтакте" />
-//                     </div>
-//                     <div className={styles.socialWrapper}>
-//                         <img src={tg} alt="Иконка социальной сети Telegram" />
-//                     </div>
-//                     <div className={styles.socialWrapper}>
-//                         <img src={phone} alt="Иконка телефонной трубки" />
-//                     </div>                    
-//                 </div>
-//             </div>
-//             <div className="container">
-//                 <div className={styles.textBlock}>
-//                     <h1>ЛАБОРАТОРИЯ КРАСОТЫ АЛХИМИЯ</h1>
-//                     <button className={styles.btn}>ОНЛАЙН-ЗАПИСЬ</button>
-//                 </div>
-//             </div>
-//         </header>
-//     );
-// };
 
 export default Header;

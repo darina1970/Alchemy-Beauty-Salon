@@ -89,6 +89,11 @@
     --color-golden: #DDB565;
     --color-dark-green: #042F2A;
     --color-white: #FFFFFF;
+    --color-btn-primary-hover: #D8C5B1;
+    --color-btn-secondary: #F5F0E8;
+    --color-btn-secondary-stroke: #BFBFBF;
+    --color-btn-secondary-stroke-hover: #9E9E9E;
+    --color-btn-secondary-bg-hover: #E8E1D7;
 }
 
 html {
@@ -121,6 +126,10 @@ body {
     padding-bottom: 125px;
 }
 
+h2, h3, h4, h5 {
+    margin-bottom: 90px;
+}
+
 /* Кнопки на главной странице */
 .btn-primary {
     color: var(--color-text);
@@ -129,14 +138,30 @@ body {
     border: 1px solid var(--color-text);
     border-radius: 20px;
     padding: 12px 24px;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
 
+.btn-primary:hover {
+    background-color: var(--color-btn-primary-hover);
 }
 
 /* Кнопки на доп страницах */
-/* .btn-secondary {
+.btn-secondary {
+    /* color: var(--color-text); */
+    background-color: var(--color-btn-secondary);
+    text-transform: uppercase;
+    border: 1px solid var(--color-btn-secondary-stroke);
+    border-radius: 20px;
+    padding: 12px 24px;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
 
-} */
-
+.btn-secondary:hover {
+    border: 1px solid var(--color-btn-secondary-stroke-hover);
+    background-color: var(--color-btn-secondary-bg-hover);
+}
 
 /* Медиазапрос для экранов с шириной больше 1600px */
 @media (min-width: 1600px) {
