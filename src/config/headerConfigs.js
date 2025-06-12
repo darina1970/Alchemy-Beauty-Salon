@@ -14,6 +14,7 @@ export const headerConfigs = {
         menuItems: [
             {label: 'ГЛАВНАЯ', href: '/'},
             {label: 'УСЛУГИ', href: '/services'},
+            {label: 'КОНТАКТЫ', href: '#contacts'},
         ],
     },
     services: {
