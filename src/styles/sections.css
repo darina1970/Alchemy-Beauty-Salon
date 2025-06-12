@@ -1,0 +1,12 @@
+.section-light {
+    background-color: var(--color-bg-light);
+}
+
+.section-dark {
+    background-color: var(--color-bg-dark);
+}
+
+.section-promo {
+    background-color: var(--color-dark-green);
+    color: var(--color-golden);
+}

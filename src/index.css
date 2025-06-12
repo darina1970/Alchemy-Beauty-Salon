@@ -1,0 +1,171 @@
+@import './styles/reset.css';
+
+
+@font-face {
+    font-family: "Jura";
+    src: url("/fonts/Jura/Jura-Bold.woff2") format("woff2"),
+        url("/fonts/Jura/Jura-Bold.woff") format("woff"),
+        url("/fonts/Jura/Jura-Bold.ttf") format("truetype"),
+        url("/fonts/Jura/Jura-Bold.eot") format("embedded-opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url("/fonts/CormorantGaramond/CormorantGaramond-Italic.woff2") format("woff2"),
+        url("/fonts/CormorantGaramond/CormorantGaramond-Italic.woff") format('woff'),
+        url("/fonts/CormorantGaramond/CormorantGaramond-Italic.ttf") format('truetype'),
+        url("/fonts/CormorantGaramond/CormorantGaramond-Italic.eot") format('embedded-opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('/fonts/CormorantGaramond/CormorantGaramond-Regular.woff2') format('woff2'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-Regular.woff') format('woff'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-Regular.ttf') format('truetype'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-Regular.eot') format('embedded-opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('/fonts/CormorantGaramond/CormorantGaramond-Bold.woff2') format('woff2'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-Bold.woff') format('woff'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-Bold.ttf') format('truetype'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-Bold.eot') format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('/fonts/CormorantGaramond/CormorantGaramond-SemiBold.woff2') format('woff2'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-SemiBold.woff') format('woff'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-SemiBold.ttf') format('truetype'),
+        url('/fonts/CormorantGaramond/CormorantGaramond-SemiBold.eot') format('embedded-opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope/Manrope-Regular.woff2') format('woff2'),
+        url('/fonts/Manrope/Manrope-Regular.woff') format('woff'),
+        url('/fonts/Manrope/Manrope-Regular.ttf') format('truetype'),
+        url('/fonts/Manrope/Manrope-Regular.eot') format('embedded-opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    /* Шрифты */
+    /* Шрифт для заголовков и текста главной страницы */
+    --font-base: 'Cormorant Garamond', sans-serif;
+    /* Шрифт для меню */
+    --font-menu: 'Jura', sans-serif;
+    /* Шрифт для технической информации */
+    --font-info: 'Manrope', sans-serif;
+
+    /* Веса шрифтов */
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Цвета */
+    --color-bg-light: #EBDCC7;
+    --color-bg-dark: #E2D2BA;
+    --color-text: #3A2F2A;
+    --color-golden: #DDB565;
+    --color-dark-green: #042F2A;
+    --color-white: #FFFFFF;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    color: var(--color-text);
+    font-family: var(--font-base);
+    font-size: clamp(18px, 1.67vw, 32px);
+    font-weight: var(--font-weight-regular);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;  
+    margin: 0 auto;      
+    padding: 0 20px;      
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.section {
+    padding-top: 170px;
+    width: 100%;
+    padding-bottom: 125px;
+}
+
+/* Кнопки на главной странице */
+.btn-primary {
+    color: var(--color-text);
+    background-color: transparent;
+    text-transform: uppercase;
+    border: 1px solid var(--color-text);
+    border-radius: 20px;
+    padding: 12px 24px;
+
+}
+
+/* Кнопки на доп страницах */
+/* .btn-secondary {
+
+} */
+
+
+/* Медиазапрос для экранов с шириной больше 1600px */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px; 
+        padding: 0 40px;   
+    }
+}
+
+
+/* Медиазапрос для экранов с шириной больше 1200px */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px; 
+        padding: 0 30px;  
+    }
+}
+
+
+/* Медиазапрос для экранов с шириной меньше 768px (планшеты) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 15px;   
+    }
+}
+
+/* Медиазапрос для экранов с шириной меньше 480px (мобильные устройства) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;   
+    }
+}
