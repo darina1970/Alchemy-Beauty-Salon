@@ -1,4 +1,4 @@
-.header {
+.headerWrapper {
   height: 900px;
   background-size: cover;
   background-position: right bottom;
@@ -6,7 +6,19 @@
   color: white;
 }
 
-.overlay {
+.tabletTopHeader {
+  display: none;
+}
+
+.mobileButtonWrapper {
+  display: none;
+}
+
+.mobileTitleWrapper {
+  display: none;
+}
+
+.topHeaderWrapperOverlay {
   position: relative;
   z-index: 2;
   background-color: rgba(12, 83, 59, 0.3);
@@ -14,7 +26,7 @@
   padding: 20px 0;
 }
 
-.headerWrapper {
+.topHeaderWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,6 +68,12 @@
 
 .socialWrapper:hover {
   transform: scale(1.1);
+}
+
+.socialIcon {
+  aspect-ratio: 1/1;
+  width: 60px;
+  height: auto;
 }
 
 .textBlock {
@@ -116,9 +134,125 @@
   background-image: url('/src/assets/images/Banners/Services/services-desktop.webp');
 }
 
+/* Бургер меню */
+.burgerButton {
+  width: 40px;
+  height: 40px;
+  background-color: #041F34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+/* .burgerButton span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-golden);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+} */
+
+/* Трансформация в крест */
+/* .burgerButton.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burgerButton.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerButton.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+} */
+
+.burgerButton {
+  line-height: 0;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #041F34;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Общие стили для всех полос */
+.burgerButton span {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  height: 2px;
+  background-color: var(--color-golden);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Верхняя линия */
+.burgerButton span:nth-child(1) {
+  top: 12px;
+}
+
+/* Средняя линия */
+.burgerButton span:nth-child(2) {
+  top: 19px;
+}
+
+/* Нижняя линия */
+.burgerButton span:nth-child(3) {
+  top: 26px;
+}
+
+/* --- Открытое состояние --- */
+
+.burgerButton.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 19px;
+}
+
+.burgerButton.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerButton.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 19px;
+}
+
+.burgerMenu {
+  width: 100%;
+  background-color: var(--color-dark-green);
+  padding: 20px 0;
+  position: relative;
+  z-index: 5;
+  transition: all 0.3s ease;
+  border-top: 1px solid var(--color-golden);
+  border-bottom: 1px solid var(--color-golden)
+}
+
+.burgerNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.burgerNav li {
+  margin: 10px 0;
+}
+
+.burgerNav a {
+  color: var(--color-white);
+  font-size: 18px;
+  font-family: var(--font-menu);
+  text-decoration: none;
+}
 
 @media (max-width: 1600px) {
-    .header {
+    .headerWrapper {
       height: 700px;
     }
     .textBlock {
@@ -127,24 +261,45 @@
 }
 
 @media (max-width: 1200px) {
-    .header {
+    .headerWrapper {
       height: 600px;
     }
-        .textBlock {
+    .textBlock {
       margin-top: 60px;
       width: 40%;
     }
 }
 
 @media (max-width: 920px) {
-    .header {
+    .homeBg {
       background-image: url('/src/assets/images/Banners/Home/home-tablet.webp');
     }
-    .nav {
+    .headerWrapper {
+      display: flex;
+      align-items: center;
+    }
+    .tabletTopHeader {
+      display: block;
+      background-color: var(--color-dark-green);
+      height: 90px;
+      padding: 20px 0;
+    }
+    .logoImg {
+      height: 50px;
+    }
+    .socialIcon {
+      width: 40px;
+    }
+    .topHeaderWrapperOverlay {
       display: none;
+    }
+    .textBlock {
+      margin-top: 0;
+      padding: 40px 0;
     }
     .btn {
       padding: 13px 30px;
+      width: 90%;
     }
 }
 
@@ -152,10 +307,32 @@
   .textBlock {
     display: none;
   }
+  .mobileTitleWrapper {
+    display: block;
+    background-color: var(--color-dark-green);
+  }
+  .mobileTitle {
+    text-align: center;
+    color: #E3CC9D;
+  }
+  .mobileTitleSpan {
+    color: #DFBA7A;
+  }
+  .mobileButtonWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--color-dark-green);
+    padding: 20px 60px;
+  }
+  .btn {
+    width: 60%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 500px) {
-  .header {
+  .headerWrapper {
       max-height: 350px;
     }
   .socialIcon {
@@ -163,5 +340,11 @@
   }
   .logoImg {
     width: 40px;
+  }
+  .mobileButtonWrapper {
+    padding: 20px 10px;
+  }
+  .btn {
+    width: 100%;
   }
 }
