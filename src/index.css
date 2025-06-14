@@ -148,7 +148,7 @@ h2 {
     border: 1px solid var(--color-text);
     border-radius: 20px;
     padding: 12px 24px;
-    font-size: 22px;
+    font-size: clamp(18px, 1.146vw, 22px);
     transition: all 0.3s ease;
 }
 
@@ -164,7 +164,7 @@ h2 {
     border: 1px solid var(--color-btn-secondary-stroke);
     border-radius: 20px;
     padding: 12px 24px;
-    font-size: 22px;
+    font-size: clamp(18px, 1.146vw, 22px);
     transition: all 0.3s ease;
 }
 
