@@ -6,9 +6,11 @@ import logo from "../../assets/logo/logo.svg";
 import vk from "../../assets/icons/socials/vk.svg";
 import tg from "../../assets/icons/socials/tg.svg";
 import phone from "../../assets/icons/socials/phone.svg";
+import { usePageConfig } from "../../hooks/usePageConfig";
 
 
-const Header = ({ backgroundClass, menuItems}) => {
+const Header = () => {
+    const { backgroundClass, menuItems, titlePrefix } = usePageConfig();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -153,7 +155,7 @@ const Header = ({ backgroundClass, menuItems}) => {
                 </div>
                 <div className="container">
                     <div className={styles.textBlock}>
-                        <h1>ЛАБОРАТОРИЯ КРАСОТЫ <span className={styles.titleSpan}>АЛХИМИЯ</span></h1>
+                        <h1>{titlePrefix}<span className={styles.titleSpan}>АЛХИМИЯ</span></h1>
                         <a href="#" className={styles.btn} target="_blank" rel="noopener noreferrer">ОНЛАЙН-ЗАПИСЬ</a>
                     </div>
                 </div>

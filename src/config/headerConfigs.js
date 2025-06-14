@@ -1,6 +1,7 @@
 export const headerConfigs = {
     home: {
         backgroundClass: 'homeBg',
+        titlePrefix: 'ЛАБОРАТОРИЯ КРАСОТЫ',
         menuItems: [
             {label: 'НАШИ МАСТЕРА', href: '/masters'},
             {label: 'УСЛУГИ', href: '/services'},
@@ -10,6 +11,7 @@ export const headerConfigs = {
     },
     masters: {
         backgroundClass: 'mastersBg',
+        titlePrefix: 'МАСТЕРА Лаборатории Красоты',
         backgroundSrc: '../assets/images/masters-bg.jpg',
         menuItems: [
             {label: 'ГЛАВНАЯ', href: '/'},
@@ -19,6 +21,7 @@ export const headerConfigs = {
     },
     services: {
         backgroundClass: 'servicesBg',
+        titlePrefix: 'УСЛУГИ Лаборатории Красоты',
         backgroundSrc: '../assets/images/services-bg.jpg',
         menuItems: [
             {label: 'ГЛАВНАЯ', href: '/'},

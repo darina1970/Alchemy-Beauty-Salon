@@ -1,0 +1,12 @@
+.footerMain,
+.footerInner {
+    background-color: var(--color-dark-green);
+    color: var(--color-white);
+}
+
+.footerContent {
+    padding: 80px 40px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
