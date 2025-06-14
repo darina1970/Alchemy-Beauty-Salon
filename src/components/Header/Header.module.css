@@ -139,6 +139,7 @@
   width: 40px;
   height: 40px;
   background-color: #041F34;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,38 +148,6 @@
   cursor: pointer;
   z-index: 10;
   position: relative;
-}
-
-/* .burgerButton span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: var(--color-golden);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-} */
-
-/* Трансформация в крест */
-/* .burgerButton.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burgerButton.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.burgerButton.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-} */
-
-.burgerButton {
-  line-height: 0;
-  font-size: 0;
-  width: 40px;
-  height: 40px;
-  background-color: #041F34;
-  position: relative;
-  cursor: pointer;
-  z-index: 10;
 }
 
 /* Общие стили для всех полос */
