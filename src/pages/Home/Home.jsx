@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import MainLayout from "../../layouts/MainLayout";
 // import About from './sections/About/About';
+import Services from "./sections/ServicesBlock/Services";
 import WhyUs from "./sections/WhyUs/WhyUs";
 // import Contacts from './sections/Contacts/Contacts';
 // import Promos from './sections/Promos/Promos';
@@ -27,7 +28,7 @@ const HomePage = () => {
       {/* <About variant="light" /> */}
       <WhyUs variant="dark" />
       {/* <Animation variant="light" /> */}
-      {/* <Services variant="dark" /> */}
+      <Services variant="dark" />
       {/* <Team variant="light" /> */}
       {/* <Reviews variant="dark" /> */}
       {/* <Promos variant="promo" /> */}
