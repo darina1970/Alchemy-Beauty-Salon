@@ -133,6 +133,13 @@ h5 {
     margin-bottom: 90px;
 }
 
+h2 {
+    font-size: clamp(20px, 2.604vw, 50px);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 /* Кнопки на главной странице */
 .btn-primary {
     color: var(--color-text);
@@ -195,6 +202,11 @@ h5 {
     h4,
     h5 {
         margin-bottom: 30px;
+    }
+
+    h2 {
+        letter-spacing: 0.4px;
+        text-align: center;
     }
 
     .section {
