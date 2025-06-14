@@ -81,7 +81,7 @@
     --font-weight-regular: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    
+
     /* Цвета */
     --color-bg-light: #EBDCC7;
     --color-bg-dark: #E2D2BA;
@@ -112,9 +112,9 @@ body {
 }
 
 .container {
-    width: 100%;  
-    margin: 0 auto;      
-    padding: 0 20px;      
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
@@ -126,8 +126,18 @@ body {
     padding-bottom: 125px;
 }
 
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
     margin-bottom: 90px;
+}
+
+h2 {
+    font-size: clamp(20px, 2.604vw, 50px);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Кнопки на главной странице */
@@ -163,20 +173,20 @@ h2, h3, h4, h5 {
     background-color: var(--color-btn-secondary-bg-hover);
 }
 
-/* Медиазапрос для экранов с шириной больше 1600px */
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1600px; 
-        padding: 0 40px;   
-    }
-}
-
 
 /* Медиазапрос для экранов с шириной больше 1200px */
 @media (min-width: 1200px) {
     .container {
-        max-width: 1400px; 
-        padding: 0 30px;  
+        max-width: 1460px;
+        padding: 0 30px;
+    }
+}
+
+/* Медиазапрос для экранов с шириной больше 1600px */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1680px;
+        padding: 0 40px;
     }
 }
 
@@ -184,21 +194,31 @@ h2, h3, h4, h5 {
 /* Медиазапрос для экранов с шириной меньше 768px (планшеты) */
 @media (max-width: 767px) {
     .container {
-        padding: 0 15px;   
+        padding: 0 15px;
     }
-    h2, h3, h4, h5 {
+
+    h2,
+    h3,
+    h4,
+    h5 {
         margin-bottom: 30px;
     }
+
+    h2 {
+        letter-spacing: 0.4px;
+        text-align: center;
+    }
+
     .section {
-    padding-top: 50px;
-    width: 100%;
-    padding-bottom: 50px;
-}
+        padding-top: 50px;
+        width: 100%;
+        padding-bottom: 50px;
+    }
 }
 
 /* Медиазапрос для экранов с шириной меньше 480px (мобильные устройства) */
 @media (max-width: 480px) {
     .container {
-        padding: 0 10px;   
+        padding: 0 10px;
     }
 }
