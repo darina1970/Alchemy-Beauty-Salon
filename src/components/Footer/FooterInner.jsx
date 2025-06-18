@@ -11,7 +11,7 @@ const FooterInner = ({ quote, menuItems }) => (
         <div className={styles.footerContent}>
             <span>© 2025 АЛХИМИЯ</span>
             <nav>
-                <ul>
+                <ul className={styles.footerNav}>
                 {menuItems.map(({ label, href }) => (
                     <li key={href}><a href={href}>{label}</a></li>
                 ))}
