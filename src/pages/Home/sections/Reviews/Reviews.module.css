@@ -46,10 +46,11 @@
 }
 
 .swiper-slide {
+    width: auto;
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
+    align-items: center; }
 
 .reviewImage {
     width: 100%;
@@ -92,14 +93,20 @@
     display: none !important;
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1024px) {
     .reviewImage {
         max-width: 90%;
-        height: auto;
+        height: 450px;
     }
 
     .linkIcon {
-        width: 90px;
-        height: 40px;
+        width: 150px;
+        height: 60px;
     }
 }
+
+@media (max-width: 768px) {
+    .reviewImage {
+        max-width: 90%;
+        height: 450px;
+    } }
