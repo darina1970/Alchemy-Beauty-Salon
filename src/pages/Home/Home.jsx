@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MainLayout from "../../layouts/MainLayout";
-// import About from './sections/About/About';
+import About from './sections/About/About';
 import Services from "./sections/ServicesBlock/Services";
 import WhyUs from "./sections/WhyUs/WhyUs";
 // import Contacts from './sections/Contacts/Contacts';
@@ -26,7 +26,7 @@ const HomePage = () => {
   }, [location]);
   return (
     <MainLayout headerProps={headerConfigs.home}>
-      {/* <About variant="light" /> */}
+      <About variant="light" />
       <WhyUs variant="dark" />
       {/* <Animation variant="light" /> */}
       <Services variant="dark" />
