@@ -50,7 +50,9 @@
     flex-shrink: 0;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center; 
+    min-width: 0;
+}
 
 .reviewImage {
     width: 100%;
@@ -110,3 +112,13 @@
         max-width: 90%;
         height: 450px;
     } }
+
+@media (max-width: 475px) {
+    .swiper-slide {
+        height: 380px;
+    }
+    
+    .reviewImage {
+        max-width: 100%;
+    }     
+}

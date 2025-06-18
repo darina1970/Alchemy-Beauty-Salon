@@ -51,7 +51,7 @@ const Reviews = ({ variant }) => {
           breakpoints={{
             1024: { slidesPerView: 3 },
             768: { slidesPerView: 2 },
-            480: { slidesPerView: 1 },
+            0: { slidesPerView: 1 },
           }}
           className={styles.swiperWrapper}
         >
