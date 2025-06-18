@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
+import scrollTop from '../../assets/icons/arrows/up.svg';
 
 const FooterMain = ({ menuItems }) => (
   <footer className={styles.footerMain}>
@@ -12,7 +13,13 @@ const FooterMain = ({ menuItems }) => (
           ))}
         </ul>
       </nav>
-      <button className="scroll-top">↑</button>
+      <button 
+        className={styles.scrollTop}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth'})}
+        aria-label="Наверх"
+      >
+        <img src={scrollTop} alt="Наверх" />
+      </button>
     </div>
   </footer>
 );

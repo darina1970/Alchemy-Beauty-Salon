@@ -4,13 +4,52 @@
     color: var(--color-white);
 }
 
+.footerQuote {
+    text-align: center;
+}
+
 .footerContent {
     padding: 80px 40px;
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
+}
+
+.footerContent span {
+    font-size: 24px;
+    font-family: var(--font-menu);
+    font-weight: var(--font-weight-bold);
 }
 
 .footerNav {
     display: flex;
+    gap: 80px;
+}
+
+.footerNav li {
+    font-size: 20px;
+    font-family: var(--font-menu);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s ease;
+}
+
+.footerNav li:hover {
+    transform: scale(1.1);
+}
+
+
+
+.scrollTop {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.scrollTop img {
+    transition: all 0.3s ease;
+}
+
+.scrollTop img:hover {
+    transform: scale(1.1);
 }
