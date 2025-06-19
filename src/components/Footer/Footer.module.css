@@ -5,7 +5,17 @@
 }
 
 .footerQuote {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 80px 0px;
+    border-bottom: 1px solid var(--color-golden);
+}
+
+.footerQuote p {
+    color: var(--color-golden);
+    font-size: clamp(20px, 2.604vw, 50px);
+    font-style: italic;
 }
 
 .footerContent {
@@ -37,8 +47,6 @@
 .footerNav li:hover {
     transform: scale(1.1);
 }
-
-
 
 .scrollTop {
     border: none;

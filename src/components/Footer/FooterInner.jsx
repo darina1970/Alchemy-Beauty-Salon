@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from "./Footer.module.css";
 import scrollTop from "../../assets/icons/arrows/up.svg";
+import quoteMark from '../../assets/icons/quote.svg';
 
 const FooterInner = ({ quote, menuItems }) => (
     <footer className={styles.footerInner}>
         <div className={styles.footerQuote}>
-            <p>“ {quote} ”</p>
+            <img src={quoteMark} alt="цитата" />
+            <p>{quote}</p>
         </div>
         <div className={styles.footerContent}>
             <span>© 2025 АЛХИМИЯ</span>
@@ -16,13 +18,13 @@ const FooterInner = ({ quote, menuItems }) => (
                 ))}
                 </ul>
             </nav>
-            <button 
+            <div 
                 className={styles.scrollTop}
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth'})}
                 aria-label="Наверх"
             >
                 <img src={scrollTop} alt="Наверх" />
-            </button>
+            </div>
         </div>
     </footer>
 );

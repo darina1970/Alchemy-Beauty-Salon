@@ -13,13 +13,13 @@ const FooterMain = ({ menuItems }) => (
           ))}
         </ul>
       </nav>
-      <button 
+      <div
         className={styles.scrollTop}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth'})}
         aria-label="Наверх"
       >
         <img src={scrollTop} alt="Наверх" />
-      </button>
+      </div>
     </div>
   </footer>
 );

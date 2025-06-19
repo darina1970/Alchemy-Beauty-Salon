@@ -26,6 +26,7 @@ export const headerConfigs = {
         menuItems: [
             {label: 'ГЛАВНАЯ', href: '/'},
             {label: 'МАСТЕРА', href: '/masters'},
+            {label: 'КОНТАКТЫ', href: '#contacts'},
         ],
     },
 };
