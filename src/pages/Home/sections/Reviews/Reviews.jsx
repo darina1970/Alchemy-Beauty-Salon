@@ -1,8 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./Reviews.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
 
 import review1 from "/src/assets/images/HomeImg/Reviews/review1.webp";
 import review2 from "/src/assets/images/HomeImg/Reviews/review2.webp";
@@ -20,49 +17,79 @@ import gisIcon from "/src/assets/icons/reviews/2gis.svg";
 import arrowLeft from "/src/assets/icons/arrows/left.svg";
 import arrowRight from "/src/assets/icons/arrows/right.svg";
 
+const reviews = [
+  review1, review2, review3, review4, review5,
+  review6, review7, review8, review9, review10,
+];
+
 const Reviews = ({ variant }) => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const carouselRef = useRef(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
+
+  const handleScroll = () => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const slideWidth = el.offsetWidth;
+    const index = Math.round(el.scrollLeft / slideWidth);
+    setActiveSlide(index);
+  };
+
+  const scrollTo = (direction) => {
+    const el = carouselRef.current;
+    if (!el) return;
+
+    const width = el.offsetWidth;
+    el.scrollBy({ left: direction * width, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className={`section section-${variant} ${styles.reviewsSection}`}>
       <div className={`container ${styles.reviewsContainer}`}>
         <h2>ОТЗЫВЫ</h2>
 
-        <div className={styles.arrowsWrapper}>
-          <button ref={prevRef} className={`${styles.arrow} ${styles.prevArrow}`}>
-            <img src={arrowLeft} alt="Назад" />
-          </button>
-          <button ref={nextRef} className={`${styles.arrow} ${styles.nextArrow}`}>
-            <img src={arrowRight} alt="Вперёд" />
-          </button>
+        {!isMobile && (
+          <div className={styles.arrowsWrapper}>
+            <button className={styles.arrow} onClick={() => scrollTo(-1)}>
+              <img src={arrowLeft} alt="Назад" />
+            </button>
+            <button className={styles.arrow} onClick={() => scrollTo(1)}>
+              <img src={arrowRight} alt="Вперед" />
+            </button>
+          </div>
+        )}
+
+        <div className={styles.carousel} ref={carouselRef}>
+          {reviews.map((img, i) => (
+            <div className={styles.slide} key={i}>
+              <img src={img} alt={`Отзыв ${i + 1}`} className={styles.reviewImage} />
+            </div>
+          ))}
         </div>
 
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={3}
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          breakpoints={{
-            1024: { slidesPerView: 3 },
-            768: { slidesPerView: 2 },
-            0: { slidesPerView: 1 },
-          }}
-          className={styles.swiperWrapper}
-        >
-          {[review1, review2, review3, review4, review5, review6, review7, review8, review9, review10].map(
-            (img, i) => (
-              <SwiperSlide key={i}>
-                <img src={img} alt={`Отзыв ${i + 1}`} className={styles.reviewImage} />
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
+        {isMobile && (
+          <div className={styles.dots}>
+            {reviews.map((_, i) => (
+              <span key={i} className={`${styles.dot} ${i === activeSlide ? styles.active : ""}`} />
+            ))}
+          </div>
+        )}
 
         <p className={styles.reviewText}>БЛАГОДАРЯ ВАМ МЫ СТАНОВИМСЯ ЕЩЁ ЛУЧШЕ!</p>
 
