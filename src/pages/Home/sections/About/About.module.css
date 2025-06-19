@@ -11,6 +11,10 @@
     order: 1;
 }
 
+.text {
+    padding-bottom: 30px;
+}
+
 .imageWrapper {
     flex: 1;
     max-width: 50vw;
