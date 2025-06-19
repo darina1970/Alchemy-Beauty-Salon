@@ -7,7 +7,7 @@ const About = ({ variant }) => {
         <section className={`section section-${variant}`}>
             <div className={`container ${styles.aboutContainer}`}>
                 <div className={styles.textBlock}>
-                    <h2>О НАС</h2>
+                <h2>О НАС</h2>
                     
                     <p className={styles.text}>
                         АЛХИМИЯ - это не просто салон красоты, это настоящая бьюти-лаборатория, спрятанная под землей, где происходят волшебные превращения.
