@@ -1,0 +1,63 @@
+.fullWidth {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 100vw;
+  max-width: 1000px;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.button {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-top: 79px;
+  padding: 24px !important;
+  font-size: clamp(18px, 2vw, 22px) !important;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    margin-top: 25px;
+    padding: 14px 6px !important;
+    font-size: 17px !important;
+  }
+}
