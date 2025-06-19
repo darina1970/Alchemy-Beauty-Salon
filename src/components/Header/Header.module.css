@@ -32,6 +32,12 @@
   align-items: center;
 }
 
+.logoImg {
+  width: 100px;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
 .nav ul {
   display: flex;
   justify-content: flex-end;
@@ -243,6 +249,12 @@
     .homeBg {
       background-image: url('/src/assets/images/Banners/Home/home-tablet.webp');
     }
+    .mastersBg {
+      background-image: url('/src/assets/images/Banners/Masters/masters-tablet.webp');
+    }
+    .servicesBg {
+      background-image: url('/src/assets/images/Banners/Services/services-tablet.webp');
+    }
     .headerWrapper {
       display: flex;
       align-items: center;
@@ -277,12 +289,14 @@
     display: none;
   }
   .mobileTitleWrapper {
+    padding: 10px 0;
     display: block;
     background-color: var(--color-dark-green);
   }
   .mobileTitle {
     text-align: center;
     color: #E3CC9D;
+    line-height: 1.2;
   }
   .mobileTitleSpan {
     color: #DFBA7A;

@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import scrollTop from '../../assets/icons/arrows/up.svg';
+import copyright from '../../assets/icons/copyright.svg';
 
 const FooterMain = ({ menuItems }) => (
   <footer className={styles.footerMain}>
     <div className={styles.footerContent}>
-      <span>© 2025 АЛХИМИЯ</span>
+      <span>
+        <img src={copyright} alt="Copyright" />
+        <p>2025 АЛХИМИЯ</p>
+      </span>
       <nav>
         <ul className={styles.footerNav}>
           {menuItems.map(({ label, href }) => (
