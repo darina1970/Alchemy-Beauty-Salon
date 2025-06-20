@@ -4,8 +4,8 @@ import stars from "../../../../assets/icons/promos/stars.svg";
 const Promos = ({ variant }) => (
   <section id="promos" className={styles.promos}>
     <div className={styles.imageWrapper} />
-    <div className={`container section-${variant} ${styles.promosContent}`}>
-      <div className={styles.blockWrapper}>
+    <div className={`section-${variant} ${styles.promosContent}`}>
+      <div className={`container ${styles.blockWrapper}`}>
         <div className={styles.textBlock}>
           <div className={styles.titleBlock}>
             <img className={styles.promosStars} src={stars} alt="stars" />
