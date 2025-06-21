@@ -5,7 +5,7 @@ import Services from "./sections/ServicesBlock/Services";
 import WhyUs from "./sections/WhyUs/WhyUs";
 import Animation from "./sections/Animation/Animation";
 import Team from "./sections/Team/Team";
-// import Contacts from './sections/Contacts/Contacts';
+import Contacts from "./sections/Contacts/Contacts";
 import Promos from "./sections/Promos/Promos";
 import Reviews from "./sections/Reviews/Reviews";
 import { headerConfigs } from "../../config/headerConfigs";
@@ -35,7 +35,7 @@ const HomePage = () => {
       <Team variant="light" />
       <Reviews variant="dark" />
       <Promos variant="promo" />
-      {/* <Contacts variant="light" /> */}
+      <Contacts variant="light" />
     </MainLayout>
   );
 };
