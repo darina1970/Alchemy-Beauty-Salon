@@ -67,6 +67,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Cormorant Upright';
+    src: url('/fonts/CormorantUpright/CormorantUpright-Bold.woff2') format('woff2'),
+        url('/fonts/CormorantUpright/CormorantUpright-Bold.woff') format('woff'),
+        url('/fonts/CormorantUpright/CormorantUpright-Bold.ttf') format('truetype'),
+        url('/fonts/CormorantUpright/CormorantUpright-Bold.eot') format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     /* Шрифты */
@@ -76,6 +86,8 @@
     --font-menu: 'Jura', sans-serif;
     /* Шрифт для технической информации */
     --font-info: 'Manrope', sans-serif;
+    /* Шрифт для анимации */
+    --font-animation: 'Cormorant Upright', sans-serif;
 
     /* Веса шрифтов */
     --font-weight-regular: 400;
