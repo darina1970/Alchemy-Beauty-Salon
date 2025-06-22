@@ -6,7 +6,11 @@ import { footerQuotes } from '../config/footerQuotes';
 const getPageKey = (pathname) => {
     if (pathname === '/') return 'home';
     if (pathname.includes('/masters')) return 'masters';
-    if (pathname.includes('/services')) return 'services';
+    if (pathname.includes('/services')) {
+        if (pathname === '/services') return 'services';
+        return 'rooms';
+    } 
+    if (pathname.includes('/room')) return 'rooms';   
     return 'default';
 };
 
@@ -16,7 +20,7 @@ export const usePageConfig = () => {
     const pageKey = getPageKey(pathname);
 
     const headerConfig = headerConfigs[pageKey] || {};
-    const quote = footerQuotes[pageKey] || null;
+    const quote = footerQuotes[pageKey] || footerQuotes.default;
 
     return {
         pageKey,

@@ -140,6 +140,10 @@
   background-image: url('/src/assets/images/Banners/Services/services-desktop.webp');
 }
 
+.roomsBg {
+  background-color: var(--color-dark-green);
+}
+
 /* Бургер меню */
 .burgerButton {
   width: 40px;
