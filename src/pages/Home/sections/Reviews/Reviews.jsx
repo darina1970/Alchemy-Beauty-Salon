@@ -42,7 +42,7 @@ const Reviews = ({ variant }) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - el.offsetLeft;
-      const walk = (x - startX) * 1.2;
+      const walk = (x - startX) * 2.5;
       el.scrollLeft = scrollLeft - walk;
     };
 
@@ -64,7 +64,7 @@ const Reviews = ({ variant }) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.touches[0].pageX - el.offsetLeft;
-      const walk = (x - startX) * 1.2;
+      const walk = (x - startX) * 2.5;
       el.scrollLeft = scrollLeft - walk;
     };
 
@@ -73,6 +73,12 @@ const Reviews = ({ variant }) => {
       el.classList.remove(styles.dragging);
     };
 
+    const onWheel = (e) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    }
+
     el.addEventListener("mousedown", onMouseDown);
     el.addEventListener("mousemove", onMouseMove);
     el.addEventListener("mouseup", onMouseUp);
@@ -80,6 +86,7 @@ const Reviews = ({ variant }) => {
     el.addEventListener("touchstart", onTouchStart);
     el.addEventListener("touchmove", onTouchMove, { passive: false });
     el.addEventListener("touchend", onTouchEnd);
+    el.addEventListener("wheel", onWheel, { passive: false });
 
     return () => {
       el.removeEventListener("mousedown", onMouseDown);
@@ -89,6 +96,7 @@ const Reviews = ({ variant }) => {
       el.removeEventListener("touchstart", onTouchStart);
       el.removeEventListener("touchmove", onTouchMove);
       el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("wheel", onWheel);
     };
   }, []);
 
@@ -100,7 +108,7 @@ const Reviews = ({ variant }) => {
         <div className={styles.carousel} ref={carouselRef}>
           {reviews.map((img, i) => (
             <div key={i} className={styles.slide}>
-              <img src={img} alt={`Отзыв ${i + 1}`} className={styles.reviewImage} />
+              <img src={img} alt={`Отзыв ${i + 1}`} className={styles.reviewImage} draggable={false} />
             </div>
           ))}
         </div>

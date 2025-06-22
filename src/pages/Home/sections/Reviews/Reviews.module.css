@@ -12,7 +12,8 @@
     scrollbar-width: none;
     user-select: none;
     -webkit-user-select: none;
-    touch-action: none;
+    /* touch-action: none; */
+    will-change: scroll-position;
 }
 
 .carousel.dragging {
@@ -32,6 +33,10 @@
     width: auto;
     object-fit: contain;
     border-radius: 16px;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .reviewText {
