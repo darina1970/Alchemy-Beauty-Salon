@@ -8,7 +8,7 @@ import styles from "./Contacts.module.css";
 
 const Contacts = ({ variant }) => {
   return (
-    <section className={`section section-${variant}`}>
+    <section id="contacts" className={`section section-${variant}`}>
       <div className="container">
         <h2>Контакты</h2>
         <div className={styles.container}>
