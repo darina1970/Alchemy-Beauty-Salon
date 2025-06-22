@@ -27,7 +27,6 @@ const Team = ({ variant }) => {
       <div className="container">
         <Link to='/masters'
           className={`btn-primary ${styles.button}`}
-          target="_blank"
           rel="noopener noreferrer"
         >
           Познакомиться с мастером

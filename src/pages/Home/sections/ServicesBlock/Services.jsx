@@ -17,7 +17,6 @@ const Services = ({ variant }) => {
             <h3 className={styles.text}>Парикмахерские услуги</h3>
             <Link to="/services/hair"
               className={`btn-primary ${styles.button}`}
-              target="_blank"
               rel="noopener noreferrer"
             >
               Подробнее
@@ -28,7 +27,6 @@ const Services = ({ variant }) => {
             <h3 className={styles.text}>Бровист-ламимейкер</h3>
             <Link to="/services/look"
               className={`btn-primary ${styles.button}`}
-              target="_blank"
               rel="noopener noreferrer"
             >
               Подробнее
@@ -39,7 +37,6 @@ const Services = ({ variant }) => {
             <h3 className={styles.text}>Маникюр/Педикюр</h3>
             <Link to="/services/nails"
               className={`btn-primary ${styles.button}`}
-              target="_blank"
               rel="noopener noreferrer"
             >
               Подробнее
@@ -50,7 +47,6 @@ const Services = ({ variant }) => {
             <h3 className={styles.text}>Солярий</h3>
             <Link to="/services/tan"
               className={`btn-primary ${styles.button}`}
-              target="_blank"
               rel="noopener noreferrer"
             >
               Подробнее
