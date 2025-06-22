@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/Home/Home";
 import MastersPage from "../pages/Masters/Masters";
 import ServicesPage from "../pages/OurServices/OurServices";
+import RoomLayout from "../layouts/RoomLayout";
+import HairRoom from "../pages/OurServices/RoomHair/RoomHair";
 
 const AppRouter = () => {
     return(
@@ -10,6 +12,14 @@ const AppRouter = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/masters" element={<MastersPage />} />
                 <Route path="/services" element={<ServicesPage />} />
+                <Route element={<RoomLayout />}>
+                    <Route path="/services/hair" element={<HairRoom />} />
+                    {/* <Route path="/services/nails" element={<NailsRoom />} />
+                    <Route path="/services/look" element={<LookRoom />} />
+                    <Route path="/services/tan" element={<TanRoom />} /> */}
+                </Route>
+
+                {/* <Route path="*" element={<NotFound />} /> */}
             </Routes>
         </BrowserRouter>
     );

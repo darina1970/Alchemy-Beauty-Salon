@@ -25,8 +25,16 @@ export const headerConfigs = {
         backgroundSrc: '../assets/images/services-bg.jpg',
         menuItems: [
             {label: 'ГЛАВНАЯ', href: '/'},
-            {label: 'МАСТЕРА', href: '/masters'},
+            {label: 'НАШИ МАСТЕРА', href: '/masters'},
             {label: 'КОНТАКТЫ', href: '#contacts'},
         ],
     },
+    rooms: {
+        backgroundClass: 'roomsBg',
+        menuItems: [
+            {label: 'ГЛАВНАЯ', href: '/'},
+            {label: 'НАШИ МАСТЕРА', href: '/masters'},
+            {label: 'УСЛУГИ', href: '/services'},
+        ]
+    }
 };
