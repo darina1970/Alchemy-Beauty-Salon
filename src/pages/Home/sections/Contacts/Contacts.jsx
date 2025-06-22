@@ -8,7 +8,7 @@ import styles from "./Contacts.module.css";
 
 const Contacts = ({ variant }) => {
   return (
-    <section className={`section section-${variant}`}>
+    <section id="contacts" className={`section section-${variant}`}>
       <div className="container">
         <h2>Контакты</h2>
         <div className={styles.container}>
@@ -25,7 +25,7 @@ const Contacts = ({ variant }) => {
                 <h3 className={styles.title}>адрес</h3>
                 <a href="https://yandex.ru/map-widget/v1/?ll=82.900837%2C55.060261&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzA5Nzg4OBJD0KDQvtGB0YHQuNGPLCDQndC-0LLQvtGB0LjQsdC40YDRgdC6LCDQlNCw0YfQvdCw0Y8g0YPQu9C40YbQsCwgMjEvMyIKDTrNpUIVtT1cQg%2C%2C&z=16.85">
                   <p className={styles.text}>
-                    ​Дачная, 21/3, <br /> Новосибирск
+                  Дачная, 21/3, <br /> Новосибирск
                   </p>
                 </a>
               </div>
