@@ -165,7 +165,7 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.mobileButtonWrapper}>
-                <a href="#" className={styles.btn} target="_blank" rel="noopener noreferrer">ОНЛАЙН-ЗАПИСЬ</a>
+                <a href="https://dikidi.app/1640050?p=0.pi" className={styles.btn} target="_blank" rel="noopener noreferrer">ОНЛАЙН-ЗАПИСЬ</a>
             </div>
         </header>
         

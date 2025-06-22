@@ -9,13 +9,13 @@ const RoomLayout = () => {
     const { quote, menuItems } = usePageConfig();
 
     return (
-        <>
+        <div className="layout">
             <HeaderRoom />
             <main>
                 <Outlet />
             </main>
             <FooterInner quote={quote} menuItems={menuItems} />
-        </>
+        </div>
     )
 }
 
