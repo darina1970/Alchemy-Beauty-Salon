@@ -28,7 +28,7 @@ const Promos = ({ variant }) => (
           </div>
         </div>
         <a
-          href="#"
+          href="https://wa.me/79137835046"
           className={`btn-primary ${styles.button}`}
           target="_blank"
           rel="noopener noreferrer"

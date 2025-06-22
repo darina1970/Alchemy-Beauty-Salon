@@ -33,7 +33,7 @@ const HeaderRoom = () => {
                         </ul>
                     </nav>
                     <div className={styles.socials}>
-                        <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
+                        <a className={styles.socialWrapper} href="https://vk.com/alchemyyy" target="_blank" rel="noopener noreferrer">
                             <img className={styles.socialIcon} src={vk} alt="Иконка социальной сети ВКонтакте" />
                         </a>
                         <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">

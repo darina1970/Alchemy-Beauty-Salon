@@ -73,12 +73,6 @@ const Reviews = ({ variant }) => {
       el.classList.remove(styles.dragging);
     };
 
-    const onWheel = (e) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-      el.scrollLeft += e.deltaY;
-    }
-
     el.addEventListener("mousedown", onMouseDown);
     el.addEventListener("mousemove", onMouseMove);
     el.addEventListener("mouseup", onMouseUp);
@@ -86,7 +80,6 @@ const Reviews = ({ variant }) => {
     el.addEventListener("touchstart", onTouchStart);
     el.addEventListener("touchmove", onTouchMove, { passive: false });
     el.addEventListener("touchend", onTouchEnd);
-    el.addEventListener("wheel", onWheel, { passive: false });
 
     return () => {
       el.removeEventListener("mousedown", onMouseDown);
@@ -96,7 +89,6 @@ const Reviews = ({ variant }) => {
       el.removeEventListener("touchstart", onTouchStart);
       el.removeEventListener("touchmove", onTouchMove);
       el.removeEventListener("touchend", onTouchEnd);
-      el.removeEventListener("wheel", onWheel);
     };
   }, []);
 
