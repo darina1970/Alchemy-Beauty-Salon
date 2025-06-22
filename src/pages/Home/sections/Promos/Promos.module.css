@@ -14,6 +14,7 @@
 }
 
 .promosContent {
+  width: 100% !important;
   padding-top: 50px !important;
   padding-bottom: 70px !important;
   display: flex;
@@ -94,6 +95,12 @@
   padding: clamp(16px, 2.5vw, 24px) clamp(13px, 8vw, 115px) !important;
   font-size: clamp(15px, 1.146vw, 22px) !important;
   box-sizing: border-box;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 769px) {
@@ -109,7 +116,6 @@
   }
 
   .promosContent {
-    width: 50%;
     padding: 50px 40px 70px;
     align-items: flex-start;
     position: relative;
@@ -125,11 +131,16 @@
 
   .button {
     position: absolute;
-    bottom: -39px;
+    bottom: -33px;
     left: 50%;
-    transform: translateX(-50%);
     width: auto;
     margin: 0;
+    transform: translateX(-50%);
+    transform-origin: center bottom;
+  }
+
+  .button:hover {
+    transform: translateX(-50%) scale(1.1);
   }
 }
 
@@ -142,11 +153,15 @@
     width: 100%;
     padding: 16px !important;
   }
+
+  .button:hover {
+    transform: none !important;
+  }
 }
 
 @media (max-width: 525px) {
   .imageWrapper {
-    background-image: url("../../../../assets/images/HomeImg/promos/bg2.webp");
+    background-image: url("../../../../assets/images//HomeImg/promos/bg2.webp");
     height: clamp(372px, 17vw, 572px);
   }
 }

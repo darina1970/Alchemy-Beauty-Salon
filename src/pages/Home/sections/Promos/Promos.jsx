@@ -4,8 +4,8 @@ import stars from "../../../../assets/icons/promos/stars.svg";
 const Promos = ({ variant }) => (
   <section id="promos" className={styles.promos}>
     <div className={styles.imageWrapper} />
-    <div className={`container section-${variant} ${styles.promosContent}`}>
-      <div className={styles.blockWrapper}>
+    <div className={`section-${variant} ${styles.promosContent}`}>
+      <div className={`container ${styles.blockWrapper}`}>
         <div className={styles.textBlock}>
           <div className={styles.titleBlock}>
             <img className={styles.promosStars} src={stars} alt="stars" />
@@ -19,7 +19,7 @@ const Promos = ({ variant }) => (
               ваше посещение ещё приятнее!
             </p>
             <p className={styles.promosParagraph}>
-              Подарите себе немного магии — с <span>заботой</span> и{" "}
+              Подарите себе немного магии — с <span>заботой</span> и
               <span>выгодой</span>.
             </p>
             <p className={styles.promosNote}>
