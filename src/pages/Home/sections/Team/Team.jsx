@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Team.module.css";
 import team1 from "../../../../assets/images/HomeImg/MastersImg/team1.webp";
 import team2 from "../../../../assets/images/HomeImg/MastersImg/team2.webp";
@@ -24,14 +25,13 @@ const Team = ({ variant }) => {
         </div>
       </div>
       <div className="container">
-        <a
-          href="#"
+        <Link to='/masters'
           className={`btn-primary ${styles.button}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           Познакомиться с мастером
-        </a>
+        </Link>
       </div>
     </section>
   );
