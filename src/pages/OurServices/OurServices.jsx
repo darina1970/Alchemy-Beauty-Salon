@@ -12,6 +12,15 @@ const ServicesPage = () => {
             <button onClick={() => navigate('/services/hair')}>
                 Волосы
             </button>
+            <button onClick={() => navigate('/services/nails')}>
+                Ногти
+            </button>
+            <button onClick={() => navigate('/services/look')}>
+                Взгляд
+            </button>
+            <button onClick={() => navigate('/services/tan')}>
+                Загар
+            </button>
         </MainLayout>
     );
 };
