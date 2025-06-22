@@ -19,7 +19,7 @@ const Promos = ({ variant }) => (
               ваше посещение ещё приятнее!
             </p>
             <p className={styles.promosParagraph}>
-              Подарите себе немного магии — с <span>заботой</span> и{" "}
+              Подарите себе немного магии — с <span>заботой</span> и
               <span>выгодой</span>.
             </p>
             <p className={styles.promosNote}>

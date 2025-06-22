@@ -84,7 +84,6 @@
 .button {
   display: block;
   width: 100%;
-  transform: scale(1.1);
   text-align: center;
   margin-top: 24px;
   background-color: #2e2622 !important;
@@ -96,6 +95,12 @@
   padding: clamp(16px, 2.5vw, 24px) clamp(13px, 8vw, 115px) !important;
   font-size: clamp(15px, 1.146vw, 22px) !important;
   box-sizing: border-box;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 769px) {
@@ -126,11 +131,16 @@
 
   .button {
     position: absolute;
-    bottom: -33px; /*-39px*/
+    bottom: -33px;
     left: 50%;
-    transform: translateX(-50%) scale(1.1);
     width: auto;
     margin: 0;
+    transform: translateX(-50%);
+    transform-origin: center bottom;
+  }
+
+  .button:hover {
+    transform: translateX(-50%) scale(1.1);
   }
 }
 
@@ -140,8 +150,12 @@
   }
 
   .button {
-    width: 91%;
+    width: 100%;
     padding: 16px !important;
+  }
+
+  .button:hover {
+    transform: none !important;
   }
 }
 
