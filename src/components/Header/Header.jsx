@@ -82,13 +82,13 @@ const Header = () => {
                             <img className={styles.logoImg} src={logo} alt="Логотип" />
                         </Link>
                         <div className={styles.socials}>
-                            <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
+                            <a className={styles.socialWrapper} href="https://vk.com/alchemyyy" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.socialIcon} src={vk} alt="Иконка социальной сети ВКонтакте" />
                             </a>
-                            <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
+                            <a className={styles.socialWrapper} href="https://t.me/alchemy00" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.socialIcon} src={tg} alt="Иконка социальной сети Telegram" />
                             </a>
-                            <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
+                            <a className={styles.socialWrapper} href="https://wa.me/79137835046" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.socialIcon} src={phone} alt="Иконка телефонной трубки" />
                             </a>                    
                         </div>
@@ -144,13 +144,13 @@ const Header = () => {
                                 </ul>
                             </nav>
                             <div className={styles.socials}>
-                                <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
+                                <a className={styles.socialWrapper} href="https://vk.com/alchemyyy" target="_blank" rel="noopener noreferrer">
                                     <img className={styles.socialIcon} src={vk} alt="Иконка социальной сети ВКонтакте" />
                                 </a>
-                                <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
+                                <a className={styles.socialWrapper} href="https://t.me/alchemy00" target="_blank" rel="noopener noreferrer">
                                     <img className={styles.socialIcon} src={tg} alt="Иконка социальной сети Telegram" />
                                 </a>
-                                <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
+                                <a className={styles.socialWrapper} href="https://wa.me/79137835046" target="_blank" rel="noopener noreferrer">
                                     <img className={styles.socialIcon} src={phone} alt="Иконка телефонной трубки" />
                                 </a>                    
                             </div>
