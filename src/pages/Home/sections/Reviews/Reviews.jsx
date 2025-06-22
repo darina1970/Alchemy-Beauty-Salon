@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./Reviews.module.css";
 
 import review1 from "/src/assets/images/HomeImg/Reviews/review1.webp";
@@ -14,8 +14,6 @@ import review10 from "/src/assets/images/HomeImg/Reviews/review10.webp";
 
 import yandexIcon from "/src/assets/icons/reviews/yandex.svg";
 import gisIcon from "/src/assets/icons/reviews/2gis.svg";
-import arrowLeft from "/src/assets/icons/arrows/left.svg";
-import arrowRight from "/src/assets/icons/arrows/right.svg";
 
 const reviews = [
   review1, review2, review3, review4, review5,
@@ -24,39 +22,74 @@ const reviews = [
 
 const Reviews = ({ variant }) => {
   const carouselRef = useRef(null);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkWidth = () => {
-      setIsMobile(window.innerWidth < 768);
+    const el = carouselRef.current;
+    if (!el) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const onMouseDown = (e) => {
+      isDown = true;
+      el.classList.add(styles.dragging);
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
     };
-    checkWidth();
-    window.addEventListener("resize", checkWidth);
-    return () => window.removeEventListener("resize", checkWidth);
-  }, []);
 
-  const handleScroll = () => {
-    const el = carouselRef.current;
-    if (!el) return;
-    const slideWidth = el.offsetWidth;
-    const index = Math.round(el.scrollLeft / slideWidth);
-    setActiveSlide(index);
-  };
+    const onMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX) * 1.2;
+      el.scrollLeft = scrollLeft - walk;
+    };
 
-  const scrollTo = (direction) => {
-    const el = carouselRef.current;
-    if (!el) return;
+    const onMouseUp = () => {
+      isDown = false;
+      el.classList.remove(styles.dragging);
+    };
 
-    const width = el.offsetWidth;
-    el.scrollBy({ left: direction * width, behavior: "smooth" });
-  };
+    const onMouseLeave = onMouseUp;
 
-  useEffect(() => {
-    const el = carouselRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", handleScroll);
-    return () => el.removeEventListener("scroll", handleScroll);
+    const onTouchStart = (e) => {
+      isDown = true;
+      el.classList.add(styles.dragging);
+      startX = e.touches[0].pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    };
+
+    const onTouchMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - el.offsetLeft;
+      const walk = (x - startX) * 1.2;
+      el.scrollLeft = scrollLeft - walk;
+    };
+
+    const onTouchEnd = () => {
+      isDown = false;
+      el.classList.remove(styles.dragging);
+    };
+
+    el.addEventListener("mousedown", onMouseDown);
+    el.addEventListener("mousemove", onMouseMove);
+    el.addEventListener("mouseup", onMouseUp);
+    el.addEventListener("mouseleave", onMouseLeave);
+    el.addEventListener("touchstart", onTouchStart);
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      el.removeEventListener("mousedown", onMouseDown);
+      el.removeEventListener("mousemove", onMouseMove);
+      el.removeEventListener("mouseup", onMouseUp);
+      el.removeEventListener("mouseleave", onMouseLeave);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
   }, []);
 
   return (
@@ -64,41 +97,22 @@ const Reviews = ({ variant }) => {
       <div className={`container ${styles.reviewsContainer}`}>
         <h2>ОТЗЫВЫ</h2>
 
-        {!isMobile && (
-          <div className={styles.arrowsWrapper}>
-            <button className={styles.arrow} onClick={() => scrollTo(-1)}>
-              <img src={arrowLeft} alt="Назад" />
-            </button>
-            <button className={styles.arrow} onClick={() => scrollTo(1)}>
-              <img src={arrowRight} alt="Вперед" />
-            </button>
-          </div>
-        )}
-
         <div className={styles.carousel} ref={carouselRef}>
           {reviews.map((img, i) => (
-            <div className={styles.slide} key={i}>
+            <div key={i} className={styles.slide}>
               <img src={img} alt={`Отзыв ${i + 1}`} className={styles.reviewImage} />
             </div>
           ))}
         </div>
 
-        {isMobile && (
-          <div className={styles.dots}>
-            {reviews.map((_, i) => (
-              <span key={i} className={`${styles.dot} ${i === activeSlide ? styles.active : ""}`} />
-            ))}
-          </div>
-        )}
-
         <p className={styles.reviewText}>БЛАГОДАРЯ ВАМ МЫ СТАНОВИМСЯ ЕЩЁ ЛУЧШЕ!</p>
 
         <div className={styles.linkButtons}>
           <a href="https://2gis.ru" target="_blank" rel="noreferrer">
-            <img src={gisIcon} alt="Отзывы на 2GIS" className={styles.linkIcon} />
+            <img src={gisIcon} alt="2GIS" className={styles.linkIcon} />
           </a>
           <a href="https://yandex.ru" target="_blank" rel="noreferrer">
-            <img src={yandexIcon} alt="Отзывы на Яндекс" className={styles.linkIcon} />
+            <img src={yandexIcon} alt="Яндекс" className={styles.linkIcon} />
           </a>
         </div>
       </div>
