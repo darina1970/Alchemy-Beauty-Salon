@@ -6,9 +6,11 @@ import logo from "../../assets/logo/logo.svg";
 import vk from "../../assets/icons/socials/vk.svg";
 import tg from "../../assets/icons/socials/tg.svg";
 import phone from "../../assets/icons/socials/phone.svg";
+import { usePageConfig } from "../../hooks/usePageConfig";
 
 
-const Header = ({ backgroundClass, menuItems}) => {
+const Header = () => {
+    const { backgroundClass, menuItems, titlePrefix } = usePageConfig();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -42,12 +44,20 @@ const Header = ({ backgroundClass, menuItems}) => {
             }
         };
 
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                setIsMenuOpen(false);
+            }
+        };
+
         if (isMenuOpen) {
             document.addEventListener('mousedown', handleClickOutside);
             document.addEventListener('touchstart', handleClickOutside);
+            document.addEventListener('keydown', handleEscape);
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('touchstart', handleClickOutside);
+            document.removeEventListener('keydown', handleEscape);
         };
     }, [isMenuOpen]);
 
@@ -68,11 +78,9 @@ const Header = ({ backgroundClass, menuItems}) => {
             <div className={styles.tabletTopHeader}>
                 <div className="container">
                     <div className={styles.topHeaderWrapper}>
-                        <a className={styles.logo}>
-                            <Link to='/'>
-                                <img className={styles.logoImg} src={logo} alt="Логотип" />
-                            </Link>
-                        </a>
+                        <Link to='/' className={styles.logo}>
+                            <img className={styles.logoImg} src={logo} alt="Логотип" />
+                        </Link>
                         <div className={styles.socials}>
                             <a className={styles.socialWrapper} href="#" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.socialIcon} src={vk} alt="Иконка социальной сети ВКонтакте" />
@@ -119,11 +127,9 @@ const Header = ({ backgroundClass, menuItems}) => {
                 <div className={styles.topHeaderWrapperOverlay}>
                     <div className="container">
                         <div className={styles.topHeaderWrapper}>
-                            <a className={styles.logo}>
-                                <Link to='/'>
-                                    <img className={styles.logoImg} src={logo} alt="Логотип" />
-                                </Link>
-                            </a>
+                            <Link to='/' className={styles.logo}>
+                                <img className={styles.logoImg} src={logo} alt="Логотип" />
+                            </Link>
                             <nav className={styles.nav}>
                                 <ul>
                                     {menuItems.map((item) => (
@@ -153,8 +159,8 @@ const Header = ({ backgroundClass, menuItems}) => {
                 </div>
                 <div className="container">
                     <div className={styles.textBlock}>
-                        <h1>ЛАБОРАТОРИЯ КРАСОТЫ <span className={styles.titleSpan}>АЛХИМИЯ</span></h1>
-                        <a href="#" className={styles.btn} target="_blank" rel="noopener noreferrer">ОНЛАЙН-ЗАПИСЬ</a>
+                        <h1>{titlePrefix}<span className={styles.titleSpan}>АЛХИМИЯ</span></h1>
+                        <a href="https://dikidi.app/1640050?p=0.pi" className={styles.btn} target="_blank" rel="noopener noreferrer">ОНЛАЙН-ЗАПИСЬ</a>
                     </div>
                 </div>
             </div>
