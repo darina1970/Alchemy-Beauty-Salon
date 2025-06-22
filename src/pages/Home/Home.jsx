@@ -3,8 +3,9 @@ import MainLayout from "../../layouts/MainLayout";
 import About from "./sections/About/About";
 import Services from "./sections/ServicesBlock/Services";
 import WhyUs from "./sections/WhyUs/WhyUs";
+import Animation from "./sections/Animation/Animation";
 import Team from "./sections/Team/Team";
-// import Contacts from './sections/Contacts/Contacts';
+import Contacts from "./sections/Contacts/Contacts";
 import Promos from "./sections/Promos/Promos";
 import Reviews from "./sections/Reviews/Reviews";
 import { headerConfigs } from "../../config/headerConfigs";
@@ -29,12 +30,12 @@ const HomePage = () => {
     <MainLayout headerProps={headerConfigs.home}>
       <About variant="light" />
       <WhyUs variant="dark" />
-      {/* <Animation variant="light" /> */}
+      <Animation variant="light" />
       <Services variant="dark" />
       <Team variant="light" />
       <Reviews variant="dark" />
       <Promos variant="promo" />
-      {/* <Contacts variant="light" /> */}
+      <Contacts variant="light" />
     </MainLayout>
   );
 };
