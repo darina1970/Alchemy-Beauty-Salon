@@ -1,0 +1,117 @@
+.wrapper {
+    display: flex;
+    gap: 90px;
+    align-items: stretch;
+}
+
+.imageWrapper {
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.image {
+    height: 100%;
+    max-width: 450px;
+    width: auto;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    /* 👆 отступ над именем */
+    height: 100%; 
+}
+
+/* Имя мастера и заголовок "Опыт работы" */
+.name {
+    font-family: var(--font-base);
+    /* Cormorant Garamond */
+    font-size: clamp(24px, 2vw, 40px);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Описание и все параграфы */
+.text {
+    font-family: var(--font-info);
+    /* Manrope */
+    font-size: clamp(18px, 1.3vw, 28px);
+    font-weight: var(--font-weight-regular);
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+/* Строка с иконкой */
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* Цитата */
+.quote {
+    font-family: var(--font-base);
+    /* Cormorant Garamond */
+    font-style: italic;
+    font-weight: var(--font-weight-regular);
+    font-size: clamp(18px, 1.2vw, 26px);
+    border-left: 3px solid var(--color-text);
+    padding-left: 16px;
+    opacity: 0.8;
+    margin: 16px 0;
+}
+
+/* Кнопки */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: auto;
+}
+
+.button {
+    padding: 22px 64px;
+    font-weight: var(--font-weight-semibold);
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .image {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
