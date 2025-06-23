@@ -6,6 +6,7 @@ import { hairTabs, hairPricesByTab, hairNotesByTab } from './hairPriceData';
 const HairRoom = () => {
     return (
         <div>
+            <h1>Комната волос</h1>
             <PriceBlock
                 tabs={hairTabs}
                 defaultTabKey='womenCuts'
