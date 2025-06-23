@@ -6,6 +6,10 @@
   color: white;
 }
 
+.roomHeaderWrapper {
+  padding: 20px 0;
+}
+
 .tabletTopHeader {
   display: none;
 }
@@ -13,6 +17,7 @@
 .mobileButtonWrapper {
   display: none;
 }
+
 
 .mobileTitleWrapper {
   display: none;
@@ -150,7 +155,8 @@
   height: 40px;
   background-color: #041F34;
   border-radius: 10px;
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -285,6 +291,12 @@
     .btn {
       padding: 13px 30px;
       width: 90%;
+    }
+    .navRoom {
+      display: none;
+    }
+    .burgerButton {
+      display: flex;
     }
 }
 
