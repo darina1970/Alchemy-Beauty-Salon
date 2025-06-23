@@ -250,7 +250,8 @@
       height: 600px;
     }
     .textBlock {
-      margin-top: 60px;
+      margin-top: 40px;
+      gap: 30px;
       width: 40%;
     }
 }
