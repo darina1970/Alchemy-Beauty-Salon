@@ -12,6 +12,7 @@ const HairRoom = () => {
                         tabs={hairTabs}
                         defaultTabKey='womenCuts'
                         pricesByTab={hairPricesByTab}
+                        theme= 'light'
                     />
                 </div>
             </section>

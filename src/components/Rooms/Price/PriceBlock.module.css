@@ -1,7 +1,6 @@
-.priceBlock {
-    background: #fdfdfd;
-    border-radius: 8px;
-}
+/* .priceBlock {
+    background: var(--color-bg-light);
+} */
 
 .title {
     font-size: 28px;
@@ -18,14 +17,10 @@
     text-align: center;
 }
 
-.button {
-    display: block;
-    margin: 30px auto 0;
-    padding: 10px 20px;
-    font-size: 16px;
-    background: #222;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.light {
+    background-color: var(--color-bg-light);
+}
+
+.dark {
+    background-color: var(--color-bg-dark);
 }

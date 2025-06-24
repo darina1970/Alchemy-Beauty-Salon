@@ -3,12 +3,12 @@ import Tabs from "./Tabs";
 import PriceTable from "./PriceTable";
 import styles from './PriceBlock.module.css';
 
-const PriceBlock = ({ tabs, defaultTabKey, pricesByTab }) => {
+const PriceBlock = ({ tabs, defaultTabKey, pricesByTab, theme = 'light' }) => {
     const [activeTab, setActiveTab] = useState(defaultTabKey || (tabs?.[0]?.key ?? null));
     const priceGroups = tabs ? pricesByTab[activeTab] : [pricesByTab];
 
     return (
-        <div className={styles.priceBlock}>
+        <div className={`${styles.priceBlock} ${theme === 'dark' ? styles.dark : styles.light}`}>
             <div className="container">
                 <h2 className={styles.title}>Прайс</h2>
 
@@ -30,7 +30,7 @@ const PriceBlock = ({ tabs, defaultTabKey, pricesByTab }) => {
                             <p className={styles.note}>{group.note}</p>
                         )}
 
-                        <button className={styles.button}>Записаться</button>
+                        <button className='btn-secondary'>Записаться</button>
                     </div>
                 ))}
             </div>

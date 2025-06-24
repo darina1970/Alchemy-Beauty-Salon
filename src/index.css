@@ -188,6 +188,7 @@ h2 {
     padding: 12px 24px;
     font-size: clamp(18px, 1.146vw, 22px);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-secondary:hover {
