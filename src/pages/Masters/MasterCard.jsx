@@ -12,6 +12,7 @@ const MasterCard = ({ variant, name, description, title, content, image, links }
           </div>
 
           <div className={styles.content}>
+          <div className={styles.infoTop}>
             <h2 className={styles.name}>{name}</h2>
             <p className={styles.text}>{description}</p>
             <h2 className={styles.name}>{title}</h2>
@@ -65,7 +66,8 @@ const MasterCard = ({ variant, name, description, title, content, image, links }
             </div>
           </div>
         </div>
-      </div>
+        </div>
+        </div>
     </div>
   );
 };

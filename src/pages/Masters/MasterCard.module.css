@@ -6,7 +6,6 @@
 
 .imageWrapper {
     flex-shrink: 0;
-    height: 100%;
 }
 
 .image {
@@ -18,35 +17,30 @@
     object-fit: cover;
 }
 
+/* Контент распределён по высоте: текст растягивается, кнопки внизу */
 .content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 20px;
-    /* 👆 отступ над именем */
-    height: 100%; 
+    padding-top: 50px;
+    height: 100%;
+    flex-grow: 1;
 }
 
-/* Имя мастера и заголовок "Опыт работы" */
+/* Имя и опыт работы */
 .name {
-    font-family: var(--font-base);
-    /* Cormorant Garamond */
-    font-size: clamp(24px, 2vw, 40px);
     font-weight: var(--font-weight-bold);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
 }
 
-/* Описание и все параграфы */
+/* Все параграфы и описание */
 .text {
     font-family: var(--font-info);
-    /* Manrope */
-    font-size: clamp(18px, 1.3vw, 28px);
-    font-weight: var(--font-weight-regular);
-    opacity: 0.9;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
+.description {
+    margin-bottom: 40px;
+}
 /* Строка с иконкой */
 .row {
     display: flex;
@@ -65,7 +59,6 @@
 /* Цитата */
 .quote {
     font-family: var(--font-base);
-    /* Cormorant Garamond */
     font-style: italic;
     font-weight: var(--font-weight-regular);
     font-size: clamp(18px, 1.2vw, 26px);
@@ -75,7 +68,6 @@
     margin: 16px 0;
 }
 
-/* Кнопки */
 .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -84,7 +76,7 @@
 }
 
 .button {
-    padding: 22px 64px;
+    padding: 24px 90px;
     font-weight: var(--font-weight-semibold);
     width: max-content;
     display: flex;
@@ -92,11 +84,32 @@
     justify-content: center;
 }
 
-/* Адаптив */
+@media (max-width: 1024px) {
+    .wrapper {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 950px) {
+    .button {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .wrapper {
         flex-direction: column;
         gap: 30px;
+    }
+
+    .content {
+        justify-content: initial;
+        height: auto;
+    }
+
+    .infoTop {
+        display: flex;
+        flex-direction: column;     
     }
 
     .image {
@@ -109,9 +122,5 @@
     .buttons {
         flex-direction: column;
         gap: 12px;
-    }
-
-    .button {
-        width: 100%;
     }
 }
