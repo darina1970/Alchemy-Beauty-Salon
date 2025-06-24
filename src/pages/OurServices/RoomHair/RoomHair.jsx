@@ -1,11 +1,11 @@
 import React from "react";
 import RoomGallery from "../../../components/Rooms/Gallery/RoomGallery";
-import hair1 from "../../../assets/images/RoomHair/hair1.png";
-import hair2 from "../../../assets/images/RoomHair/hair2.png";
-import hair3 from "../../../assets/images/RoomHair/hair3.png";
-import hair4 from "../../../assets/images/RoomHair/hair4.png";
-import hair5 from "../../../assets/images/RoomHair/hair5.png";
-import hair6 from "../../../assets/images/RoomHair/hair6.png";
+import hair1 from "../../../assets/images/Rooms/RoomHair/hair1.webp";
+import hair2 from "../../../assets/images/Rooms/RoomHair/hair2.webp";
+import hair3 from "../../../assets/images/Rooms/RoomHair/hair3.webp";
+import hair4 from "../../../assets/images/Rooms/RoomHair/hair4.webp";
+import hair5 from "../../../assets/images/Rooms/RoomHair/hair5.webp";
+import hair6 from "../../../assets/images/Rooms/RoomHair/hair6.webp";
 
 const HairRoom = () => {
   const hairImages = [
