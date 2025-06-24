@@ -1,0 +1,38 @@
+.tabs {
+    display: flex;
+    border: 1px solid #bfbfbf;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px 16px;
+    background-color: #f5f0e8;
+    color: #000;
+    border: none;
+    border-right: 1px solid #bfbfbf;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:last-child {
+    border-right: none;
+}
+
+.active {
+    background-color: #c3a789;
+    color: #fff;
+}
+
+.first {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.last {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
