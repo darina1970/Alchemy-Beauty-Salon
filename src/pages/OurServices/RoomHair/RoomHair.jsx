@@ -1,6 +1,6 @@
 import React from 'react';
 import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
-import { hairTabs, hairPricesByTab, hairNotesByTab } from './hairPriceData';
+import { hairTabs, hairPricesByTab } from './hairPriceData';
 
 
 const HairRoom = () => {
@@ -11,7 +11,6 @@ const HairRoom = () => {
                 tabs={hairTabs}
                 defaultTabKey='womenCuts'
                 pricesByTab={hairPricesByTab}
-                notesByTab={hairNotesByTab}
 
             />
         </div>

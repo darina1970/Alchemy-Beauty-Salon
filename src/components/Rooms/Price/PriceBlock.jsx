@@ -3,33 +3,37 @@ import Tabs from "./Tabs";
 import PriceTable from "./PriceTable";
 import styles from './PriceBlock.module.css';
 
-const PriceBlock = ({ tabs, defaultTabKey, pricesByTab, notesByTab, note }) => {
-    const [activeTab, setActiveTab] = useState(defaultTabKey || (tabs ? tabs[0].key : null));
-
-    const currentPrices = tabs ? pricesByTab[activeTab] : pricesByTab;
-    const currentNote = tabs ? (notesByTab?.[activeTab] || null) : note;
+const PriceBlock = ({ tabs, defaultTabKey, pricesByTab }) => {
+    const [activeTab, setActiveTab] = useState(defaultTabKey || (tabs?.[0]?.key ?? null));
+    const priceGroups = tabs ? pricesByTab[activeTab] : [pricesByTab];
 
     return (
         <div className={styles.priceBlock}>
             <div className="container">
                 <h2 className={styles.title}>Прайс</h2>
 
-            {tabs && (
-                <Tabs
-                tabs={tabs}
-                activeTab={activeTab}
-                onTabClick={setActiveTab}
-                />
-            )}
+                {tabs && (
+                    <Tabs
+                        tabs={tabs}
+                        activeTab={activeTab}
+                        onTabClick={setActiveTab}
+                    />
+                )}
 
-            <PriceTable data={currentPrices} />
+                {priceGroups.map((group, idx) => (
+                    <div key={idx} className={styles.priceGroup}>
+                        {group.title && <h3 className={styles.priceGroupTitle}>{group.title}</h3>}
 
-            {currentNote && (
-                <p className={styles.note}>{currentNote}</p>
-            )}
-            <button className={styles.button}>Записаться</button>
+                        <PriceTable data={group.data} columns={group.columns} />
+
+                        {group.note && (
+                            <p className={styles.note}>{group.note}</p>
+                        )}
+
+                        <button className={styles.button}>Записаться</button>
+                    </div>
+                ))}
             </div>
-            
         </div>
     );
 };
