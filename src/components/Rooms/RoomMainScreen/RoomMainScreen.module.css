@@ -52,6 +52,12 @@
 .arrowRightBtn img {
     width: clamp(30px, 2.604vw, 50px);
     aspect-ratio: 1/1;
+    transition: all 0.3s ease;
+}
+
+.arrowLeftBtn img:hover,
+.arrowRightBtn img:hover {
+    transform: scale(1.1);
 }
 
 .right {
