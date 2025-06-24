@@ -5,15 +5,17 @@ import { hairTabs, hairPricesByTab } from './hairPriceData';
 
 const HairRoom = () => {
     return (
-        <div>
-            <h1>Комната волос</h1>
-            <PriceBlock
-                tabs={hairTabs}
-                defaultTabKey='womenCuts'
-                pricesByTab={hairPricesByTab}
-
-            />
-        </div>
+        <>
+            <section className='section section-light'>
+                <div className="container">
+                    <PriceBlock
+                        tabs={hairTabs}
+                        defaultTabKey='womenCuts'
+                        pricesByTab={hairPricesByTab}
+                    />
+                </div>
+            </section>
+        </>
     );
 };
 
