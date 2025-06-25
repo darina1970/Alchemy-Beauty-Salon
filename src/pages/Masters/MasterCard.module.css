@@ -61,8 +61,8 @@
     font-family: var(--font-base);
     font-style: italic;
     font-weight: var(--font-weight-regular);
-    font-size: clamp(18px, 1.2vw, 26px);
-    border-left: 3px solid var(--color-text);
+    font-size: clamp(20px, 1.8vw, 30px);
+    border-left: none;
     padding-left: 16px;
     opacity: 0.8;
     margin: 16px 0;
@@ -84,6 +84,17 @@
     justify-content: center;
 }
 
+@media (max-width: 1280px) {
+    .button {
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
 @media (max-width: 1024px) {
     .wrapper {
         gap: 40px;
@@ -92,7 +103,7 @@
 
 @media (max-width: 950px) {
     .button {
-        width: 100%;
+        padding: 20px 40px;
     }
 }
 
@@ -117,10 +128,5 @@
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 12px;
     }
 }
