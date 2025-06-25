@@ -3,9 +3,9 @@ import RoomMainScreen from "../../../components/Rooms/RoomMainScreen/RoomMainScr
 
 import nails from "../../../assets/images/Services/nails.webp";
 import nails1 from "../../../assets/images/Rooms/NailsRoom/nails1.webp";
-import nails2 from "../../../assets/images/Rooms/NailsRoom/nails1.webp";
-import nails3 from "../../../assets/images/Rooms/NailsRoom/nails1.webp";
-import nails4 from "../../../assets/images/Rooms/NailsRoom/nails1.webp";
+import nails2 from "../../../assets/images/Rooms/NailsRoom/nails2.webp";
+import nails3 from "../../../assets/images/Rooms/NailsRoom/nails3.webp";
+import nails4 from "../../../assets/images/Rooms/NailsRoom/nails4.webp";
 
 const portfolio = [
   { src: nails },
