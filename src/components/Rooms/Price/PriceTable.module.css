@@ -1,0 +1,32 @@
+.priceHeader {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.priceRow {
+    display: flex;
+    padding: 40px 100px;
+}
+
+.evenRow {
+    background-color: #E6D2B8;
+}
+
+.oddRow {
+    background-color: #D7C3A8;
+}
+
+.col {
+    flex: 1;
+    padding: 4px 8px;
+}
+
+.col0 {
+    flex: 2;
+    text-align: left;
+}
+
+.colRight {
+    text-align: right;
+}
