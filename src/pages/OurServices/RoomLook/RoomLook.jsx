@@ -1,7 +1,7 @@
 import React from "react";
 import RoomMainScreen from "../../../components/Rooms/RoomMainScreen/RoomMainScreen";
 
-import look from "../../../assets/images/Services/look.webp";
+import look1 from "../../../assets/images/Rooms/LookRoom/look1.webp";
 
 const LookRoom = () => {
   return (
@@ -10,7 +10,7 @@ const LookRoom = () => {
         title="комната взгляда"
         quote="взгляд, в котором живёт сила стихий"
         variant="light"
-        portfolio={[{ src: look }]}
+        portfolio={[{ src: look1 }]}
         useSlider={false}
       />
     </div>

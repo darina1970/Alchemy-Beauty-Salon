@@ -28,6 +28,10 @@
     margin: 0 60px;
 }
 
+.slide-list {
+    border-radius: 20px;
+}
+
 .arrowLeftBtn,
 .arrowRightBtn {
     position: absolute;
