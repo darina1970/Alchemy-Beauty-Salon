@@ -34,3 +34,15 @@
 .colRight {
     text-align: right;
 }
+
+@media (max-width: 767px) {
+    .priceRow {
+    padding: 30px 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .priceRow {
+        padding: 30px 10px;
+    }    
+}

@@ -96,6 +96,8 @@
 .selectWrapper {
     margin-bottom: 40px;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
 }
 
 .select {
@@ -105,4 +107,6 @@
     border: 1px solid #bfbfbf;
     background-color: #f5f0e8;
     text-transform: uppercase;
+    width: 100%;
+    max-width: 100%;
 }
