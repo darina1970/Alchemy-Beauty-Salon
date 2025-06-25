@@ -30,7 +30,7 @@ const PriceBlock = ({ tabs, defaultTabKey, pricesByTab, theme = 'light' }) => {
                             <p className={styles.note}>{group.note}</p>
                         )}
 
-                        <button className='btn-secondary'>Записаться</button>
+                        <a href="https://dikidi.app/1640050?p=0.pi" target="_blank" rel="noopener noreferrer" className={`btn-secondary ${styles.priceButton}`}>Записаться</a>
                     </div>
                 ))}
             </div>

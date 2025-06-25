@@ -1,3 +1,7 @@
+.priceTable {
+    width: 100%;
+}
+
 .priceHeader {
     display: flex;
     font-weight: bold;
