@@ -1,0 +1,56 @@
+.priceTable {
+    width: 100%;
+}
+
+.priceHeader {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.priceRow {
+    display: flex;
+    padding: 40px 100px;
+}
+
+.evenRow--default {
+    background-color: #E6D2B8;
+}
+
+.oddRow--default {
+    background-color: #D7C3A8;
+}
+
+.evenRow--tanning {
+    background-color: #EADDC6;
+}
+
+.oddRow--tanning {
+    background-color: #C7B59B;
+}
+
+.col {
+    flex: 1;
+    padding: 4px 8px;
+}
+
+.col0 {
+    flex: 2;
+    text-align: left;
+}
+
+.colRight {
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .priceRow {
+    padding: 30px 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .priceRow {
+        padding: 30px 10px;
+    }    
+}
