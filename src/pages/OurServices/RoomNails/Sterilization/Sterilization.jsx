@@ -47,7 +47,7 @@ const sterilizationSteps = [
 const Sterilization = () => {
   return (
     <div className={`section ${styles.sterilization}`}>
-      <div className={`container ${styles.container}`}>
+      <div className="container">
         <div className={styles.header}>
           <h2 className={styles.title}>алхимия стерильной чистоты</h2>
           <p className={styles.subtitle}>
@@ -56,48 +56,20 @@ const Sterilization = () => {
           </p>
         </div>
         <div className={styles.content}>
-          <div className={styles.stepsGroup}>
-            {sterilizationSteps
-              .filter((step) => step.id !== 5)
-              .map((step) => (
-                <div
-                  key={step.id}
-                  className={styles.steps}
-                  data-step-id={step.id}
-                >
-                  <div className={styles.step}>
-                    <img src={step.icon} alt={`Шаг ${step.id}`} />
-                    <h2 className={styles.stepTitle}>{step.title}</h2>
-                  </div>
-                  <div className={styles.stepDescription}>
-                    <p
-                      className={`${styles.stepSubtitle} ${
-                        step.id === 1 ? styles.stepSubtitleFirst : ""
-                      }`}
-                    >
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-          </div>
-          <div className={styles.imagesGroup}>
-            <div className={styles.images}>
-              <img src={mf} alt="Процесс стерилизации" />
+          {sterilizationSteps.map((step) => (
+            <div key={step.id} className={styles.steps}>
+              <div className={styles.step}>
+                <img src={step.icon} alt={`Шаг ${step.id}`} />
+                <h2 className={styles.stepTitle}>{step.title}</h2>
+              </div>
+              <div className={styles.stepDescription}>
+                <p className={styles.stepSubtitle}>{step.description}</p>
+              </div>
             </div>
-            {sterilizationSteps
-              .filter((step) => step.id === 5)
-              .map((step) => (
-                <div key={step.id} className={styles.steps}>
-                  <div className={styles.step}>
-                    <img src={step.icon} alt={`Шаг ${step.id}`} />
-                    <h2 className={styles.stepTitle}>{step.title}</h2>
-                  </div>
-                  <div className={styles.stepDescription}>
-                    <p className={styles.stepSubtitle}>{step.description}</p>
-                  </div>
-                </div>
-              ))}
+          ))}
+
+          <div className={styles.images}>
+            <img src={mf} alt="Процесс стерилизации" />
           </div>
         </div>
       </div>
@@ -189,3 +161,171 @@ const Sterilization = () => {
 
 export default Sterilization;
 */
+
+/*const Sterilization = () => {
+  return (
+    <div className={`section ${styles.sterilization}`}>
+      <div className={`container ${styles.container}`}>
+        <div className={styles.header}>
+          <h2 className={styles.title}>алхимия стерильной чистоты</h2>
+          <p className={styles.subtitle}>
+            Каждый инструмент проходит 5 ступеней стерилизации — для вашей
+            безопасности и нашей уверенности
+          </p>
+        </div>
+        <div className={styles.content}>
+          <div className={styles.stepsGroup}>
+            {sterilizationSteps
+              .filter((step) => step.id !== 5)
+              .map((step) => (
+                <div
+                  key={step.id}
+                  className={styles.steps}
+                  data-step-id={step.id}
+                >
+                  <div className={styles.step}>
+                    <img src={step.icon} alt={`Шаг ${step.id}`} />
+                    <h2 className={styles.stepTitle}>{step.title}</h2>
+                  </div>
+                  <div className={styles.stepDescription}>
+                    <p
+                      className={`${styles.stepSubtitle} ${
+                        step.id === 1 ? styles.stepSubtitleFirst : ""
+                      }`}
+                    >
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+          </div>
+          <div className={styles.imagesGroup}>
+            <div className={styles.images}>
+              <img src={mf} alt="Процесс стерилизации" />
+            </div>
+            {sterilizationSteps
+              .filter((step) => step.id === 5)
+              .map((step) => (
+                <div key={step.id} className={styles.steps}>
+                  <div className={styles.step}>
+                    <img src={step.icon} alt={`Шаг ${step.id}`} />
+                    <h2 className={styles.stepTitle}>{step.title}</h2>
+                  </div>
+                  <div className={styles.stepDescription}>
+                    <p className={styles.stepSubtitle}>{step.description}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Sterilization;
+
+.sterilization {
+  background-color: var(--color-bg-dark);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  padding: 47px 150px;
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 92px;
+  border: 3px solid #000;
+}
+
+.header::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.header::after {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+
+.title {
+  padding-bottom: 60px !important;
+  margin-bottom: 0;
+}
+
+.content {
+  display: flex;
+  gap: 46px;
+}
+
+.stepsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.imagesGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  max-width: 597px;
+}
+
+.imagesGroup .steps {
+  width: 597px;
+  border: 2px solid #2e2622;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 2px solid #2e2622;
+  border-radius: 20px;
+  padding: 40px;
+  width: 840px;
+  max-width: 100%;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.stepTitle {
+  font-size: 36px;
+  margin-bottom: 0;
+  letter-spacing: 0.01em;
+}
+
+.stepSubtitle {
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+
+.stepSubtitleFirst {
+  padding-bottom: 60px;
+}*/

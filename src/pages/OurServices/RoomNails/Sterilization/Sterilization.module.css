@@ -11,7 +11,7 @@
 .header {
   position: relative;
   text-align: center;
-  padding: 47px 150px;
+  padding: clamp(20px, 4vw, 47px) clamp(16px, 8vw, 168px);
 }
 
 .header::before,
@@ -38,10 +38,17 @@
 }
 
 .title {
-  padding-bottom: 60px !important;
+  text-align: center;
+  padding-bottom: clamp(20px, 4vw, 60px) !important;
   margin-bottom: 0;
 }
 
+.subtitle {
+  font-size: clamp(15px, 2.5vw, 36px);
+  letter-spacing: 0.02em;
+}
+
+/*Блок инфо про обработку*/
 .content {
   display: flex;
   gap: 46px;
@@ -101,4 +108,15 @@
 
 .stepSubtitleFirst {
   padding-bottom: 60px;
+}
+
+/*Адаптив*/
+@media (max-width: 767px) {
+  .content {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
 }
