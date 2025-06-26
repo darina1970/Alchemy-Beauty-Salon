@@ -1,11 +1,17 @@
 import React from 'react';
+import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
+import { lookPrices } from './lookPriceData';
 
 
 const LookRoom = () => {
     return (
-        <div>
-            <h1>Комната взгляда</h1>
-        </div>
+        <>
+            <PriceBlock
+                pricesByTab={lookPrices}
+                theme= 'light'
+                variant='light'
+            />
+        </>
     );
 };
 

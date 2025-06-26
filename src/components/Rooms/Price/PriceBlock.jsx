@@ -5,7 +5,7 @@ import styles from './PriceBlock.module.css';
 
 const PriceBlock = ({ variant, tabs, defaultTabKey, pricesByTab, theme = 'light' }) => {
     const [activeTab, setActiveTab] = useState(defaultTabKey || (tabs?.[0]?.key ?? null));
-    const priceGroups = tabs ? pricesByTab[activeTab] : [pricesByTab];
+    const priceGroups = tabs ? pricesByTab[activeTab] : pricesByTab;
 
     return (
         <section className={`section section-${variant}`}>
