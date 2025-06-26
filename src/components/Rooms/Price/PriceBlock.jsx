@@ -8,7 +8,7 @@ const PriceBlock = ({ variant, tabs, defaultTabKey, pricesByTab, theme = 'light'
     const priceGroups = tabs ? pricesByTab[activeTab] : pricesByTab;
 
     return (
-        <section className={`section section-${variant}`}>
+        <section id="price" className={`section section-${variant}`}>
             <div className={`${styles.priceBlock} ${theme === 'dark' ? styles.dark : styles.light}`}>
                 <div className="container">
                     <h2 className={styles.title}>Прайс</h2>
