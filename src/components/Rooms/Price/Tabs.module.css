@@ -1,0 +1,93 @@
+.tabs {
+    display: flex;
+    border: 1px solid #bfbfbf;
+    border-radius: 24px;
+    margin-bottom: 60px;
+    flex-wrap: nowrap;
+}
+
+.wrap {
+    flex-wrap: wrap;
+    gap: 8px;
+    border: none;
+    border-radius: 0;
+    justify-content: center;
+}
+
+.wrap .tab {
+    border-right: none;
+    border-radius: 20px;
+}
+
+.tab {
+    flex: 1 1 200px;
+    padding: 10px 16px;
+    background-color: #f5f0e8;
+    color: var(--color-text);
+    border: none;
+    border-right: 1px solid #bfbfbf;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    min-width: 150px;
+}
+
+.compact {
+    flex: 0 1 auto;
+}
+
+.centered {
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+}
+
+.tab:last-child {
+    border-right: none;
+}
+
+.active {
+    background-color: #c3a789;
+    color: #fff;
+}
+
+.first {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+.last {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+/* Селект для мобилки */
+.selectWrapper {
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.select {
+    padding: 10px 16px;
+    padding-right: 36px;
+    font-size: 16px;
+    border-radius: 24px;
+    border: 1px solid #bfbfbf;
+    background-color: #f5f0e8;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 100%;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url('../../../assets/icons/arrows/select.svg');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}

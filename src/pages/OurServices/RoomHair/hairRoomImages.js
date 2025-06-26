@@ -1,9 +1,9 @@
-import hair1 from "../../../assets/images/Rooms/RoomHair/hair1.webp";
-import hair2 from "../../../assets/images/Rooms/RoomHair/hair2.webp";
-import hair3 from "../../../assets/images/Rooms/RoomHair/hair3.webp";
-import hair4 from "../../../assets/images/Rooms/RoomHair/hair4.webp";
-import hair5 from "../../../assets/images/Rooms/RoomHair/hair5.webp";
-import hair6 from "../../../assets/images/Rooms/RoomHair/hair6.webp";
+import hair1 from "../../../assets/images/Rooms/GalleryHair/hair1.webp";
+import hair2 from "../../../assets/images/Rooms/GalleryHair/hair2.webp";
+import hair3 from "../../../assets/images/Rooms/GalleryHair/hair3.webp";
+import hair4 from "../../../assets/images/Rooms/GalleryHair/hair4.webp";
+import hair5 from "../../../assets/images/Rooms/GalleryHair/hair5.webp";
+import hair6 from "../../../assets/images/Rooms/GalleryHair/hair6.webp";
 
 const hairImages = [
   { src: hair1, alt: "Пример работы с волосами 1" },

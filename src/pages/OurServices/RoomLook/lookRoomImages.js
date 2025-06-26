@@ -1,9 +1,9 @@
-import look1 from "../../../assets/images/Rooms/RoomLook/look1.webp";
-import look2 from "../../../assets/images/Rooms/RoomLook/look2.webp";
-import look3 from "../../../assets/images/Rooms/RoomLook/look3.webp";
-import look4 from "../../../assets/images/Rooms/RoomLook/look4.webp";
-import look5 from "../../../assets/images/Rooms/RoomLook/look5.webp";
-import look6 from "../../../assets/images/Rooms/RoomLook/look6.webp";
+import look1 from "../../../assets/images/Rooms/GalleryLook/look1.webp";
+import look2 from "../../../assets/images/Rooms/GalleryLook/look2.webp";
+import look3 from "../../../assets/images/Rooms/GalleryLook/look3.webp";
+import look4 from "../../../assets/images/Rooms/GalleryLook/look4.webp";
+import look5 from "../../../assets/images/Rooms/GalleryLook/look5.webp";
+import look6 from "../../../assets/images/Rooms/GalleryLook/look6.webp";
 
 const lookImages = [
   { src: look1, alt: "Пример работы со взлядом 1" },

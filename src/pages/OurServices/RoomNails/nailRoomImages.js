@@ -1,9 +1,9 @@
-import nail1 from "../../../assets/images/Rooms/RoomNail/nail1.webp";
-import nail2 from "../../../assets/images/Rooms/RoomNail/nail2.webp";
-import nail3 from "../../../assets/images/Rooms/RoomNail/nail3.webp";
-import nail4 from "../../../assets/images/Rooms/RoomNail/nail4.webp";
-import nail5 from "../../../assets/images/Rooms/RoomNail/nail5.webp";
-import nail6 from "../../../assets/images/Rooms/RoomNail/nail6.webp";
+import nail1 from "../../../assets/images/Rooms/GalleryNail/nail1.webp";
+import nail2 from "../../../assets/images/Rooms/GalleryNail/nail2.webp";
+import nail3 from "../../../assets/images/Rooms/GalleryNail/nail3.webp";
+import nail4 from "../../../assets/images/Rooms/GalleryNail/nail4.webp";
+import nail5 from "../../../assets/images/Rooms/GalleryNail/nail5.webp";
+import nail6 from "../../../assets/images/Rooms/GalleryNail/nail6.webp";
 
 const nailImages = [
   { src: nail1, alt: "Пример работы с ногтями 1" },
