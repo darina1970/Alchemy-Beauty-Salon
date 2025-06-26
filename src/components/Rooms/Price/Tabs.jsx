@@ -17,6 +17,8 @@ const Tabs = ({ tabs, activeTab, onTabClick }) => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const isCompact = tabs.length <= 3;
+
     if (isMobile) {
         return (
         <div className={styles.selectWrapper}>
@@ -36,7 +38,7 @@ const Tabs = ({ tabs, activeTab, onTabClick }) => {
     }
 
     return (
-        <div className={`${styles.tabs} ${isWrapMode ? styles.wrap : ""}`}>
+        <div className={`${styles.tabs} ${isWrapMode ? styles.wrap : ""} ${isCompact ? styles.centered : ""}`}>
         {tabs.map((tab, index) => {
             const isActive = tab.key === activeTab;
             const isFirst = index === 0;
@@ -46,7 +48,8 @@ const Tabs = ({ tabs, activeTab, onTabClick }) => {
             styles.tab,
             isActive && styles.active,
             !isWrapMode && isFirst && styles.first,
-            !isWrapMode && isLast && styles.last
+            !isWrapMode && isLast && styles.last,
+            isCompact && styles.compact
             ]
             .filter(Boolean)
             .join(" ");

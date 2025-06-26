@@ -1,11 +1,19 @@
 import React from 'react';
+import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
+import { nailsTabs, nailsPricesByTab } from './nailsPriceData';
 
 
 const NailsRoom = () => {
     return (
-        <div>
-            <h1>Комната ноготков</h1>
-        </div>
+        <>
+            <PriceBlock
+                tabs={nailsTabs}
+                defaultTabKey='manicure'
+                pricesByTab={nailsPricesByTab}
+                theme= 'light'
+                variant='light'
+            />
+        </>
     );
 };
 
