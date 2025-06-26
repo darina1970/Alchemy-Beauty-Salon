@@ -12,43 +12,38 @@ const MasterCard = ({ variant, name, description, title, content, image, links }
           </div>
 
           <div className={styles.content}>
-          <div className={styles.infoTop}>
-            <h2 className={styles.name}>{name}</h2>
-            <p className={styles.text}>{description}</p>
-            <h2 className={styles.name}>{title}</h2>
+            <div className={styles.header}>
+              <h2 className={styles.name}>{name}</h2>
+              <h2 className={styles.experience}>{title}</h2>
+              <p className={styles.text}>{description}</p>
+            </div>
 
-            {content.map((item, i) => {
-              if (item.type === 'paragraph') {
-                return (
-                  <div key={i} className={styles.row}>
-                    <img src={star} alt="иконка" className={styles.icon} />
-                    <p className={styles.text}>{item.text}</p>
-                  </div>
-                );
-              }
+            <div className={styles.info}>
+              {content.map((item, i) => {
+                if (item.type === 'paragraph') {
+                  return (
+                    <div key={i} className={styles.row}>
+                      <img src={star} alt="иконка" className={styles.icon} />
+                      <p className={styles.text}>{item.text}</p>
+                    </div>
+                  );
+                }
 
-              if (item.type === 'title') {
-                return (
-                  <p key={i} className={styles.text}>
-                    {item.text}
-                  </p>
-                );
-              }
+                if (item.type === 'title') {
+                  return <p key={i} className={styles.text}>{item.text}</p>;
+                }
 
-              if (item.type === 'quote') {
-                return (
-                  <blockquote key={i} className={styles.quote}>
-                    “{item.text}”
-                  </blockquote>
-                );
-              }
+                if (item.type === 'quote') {
+                  return <blockquote key={i} className={styles.quote}>“{item.text}”</blockquote>;
+                }
 
-              return null;
-            })}
+                return null;
+              })}
+            </div>
 
             <div className={styles.buttons}>
               <a
-                href={links.booking}
+                href="https://dikidi.net/ru/profile/laboratoriya_krasoty_alximiya_1640050"
                 target="_blank"
                 rel="noreferrer"
                 className={`btn-secondary ${styles.button}`}
@@ -66,8 +61,7 @@ const MasterCard = ({ variant, name, description, title, content, image, links }
             </div>
           </div>
         </div>
-        </div>
-        </div>
+      </div>
     </div>
   );
 };

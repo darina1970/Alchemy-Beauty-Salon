@@ -1,7 +1,8 @@
 .wrapper {
     display: flex;
-    gap: 90px;
     align-items: stretch;
+    gap: 90px;
+    min-height: 100%;
 }
 
 .imageWrapper {
@@ -10,38 +11,38 @@
 
 .image {
     height: 100%;
-    max-width: 450px;
     width: auto;
+    max-width: 450px;
     aspect-ratio: 3 / 4;
-    border-radius: 20px;
     object-fit: cover;
+    border-radius: 20px;
 }
 
-/* Контент распределён по высоте: текст растягивается, кнопки внизу */
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-top: 50px;
-    height: 100%;
     flex-grow: 1;
+    padding-top: 60px;
 }
 
-/* Имя и опыт работы */
-.name {
+.header {
+    margin-bottom: 40px;
+}
+
+.name,
+.experience {
+    font-family: var(--font-base);
     font-weight: var(--font-weight-bold);
+    font-size: clamp(24px, 2vw, 40px);
+    text-transform: uppercase;
+    margin-bottom: 50px;
 }
 
-/* Все параграфы и описание */
 .text {
     font-family: var(--font-info);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-.description {
-    margin-bottom: 40px;
-}
-/* Строка с иконкой */
 .row {
     display: flex;
     align-items: flex-start;
@@ -56,23 +57,25 @@
     margin-top: 4px;
 }
 
-/* Цитата */
 .quote {
     font-family: var(--font-base);
     font-style: italic;
-    font-weight: var(--font-weight-regular);
     font-size: clamp(20px, 1.8vw, 30px);
-    border-left: none;
-    padding-left: 16px;
-    opacity: 0.8;
+    opacity: 0.85;
     margin: 16px 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.info {
+    flex-grow: 1;
 }
 
 .buttons {
+    margin-top: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-top: auto;
 }
 
 .button {
@@ -84,49 +87,29 @@
     justify-content: center;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
+    .wrapper {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .content {
+        padding-top: 30px;
+    }
+
     .button {
         width: 100%;
+        padding: 20px 40px;
     }
 
     .buttons {
         flex-direction: column;
         gap: 12px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .wrapper {
-        gap: 40px;
-    }
-}
-
-@media (max-width: 950px) {
-    .button {
-        padding: 20px 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .content {
-        justify-content: initial;
-        height: auto;
-    }
-
-    .infoTop {
-        display: flex;
-        flex-direction: column;     
-    }
-
-    .image {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
     }
 }
