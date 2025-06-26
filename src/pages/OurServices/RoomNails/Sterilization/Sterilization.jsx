@@ -1,10 +1,17 @@
 import styles from "../Sterilization/Sterilization.module.css";
-import mf from "../../../../assets/images/Rooms/RoomNails/Sterilization/mf.webp";
+import mf from "../../../../assets/images/Rooms/Sterilization/mf.webp";
+
+import step1Img from "../../../../assets/images/Rooms/Sterilization/foto1.webp";
+import step2Img from "../../../../assets/images/Rooms/Sterilization/foto2.webp";
+import step3Img from "../../../../assets/images/Rooms/Sterilization/foto3.webp";
+
 import number1 from "../../../../assets/icons/sterilization/number1.svg";
 import number2 from "../../../../assets/icons/sterilization/number2.svg";
 import number3 from "../../../../assets/icons/sterilization/number3.svg";
 import number4 from "../../../../assets/icons/sterilization/number4.svg";
 import number5 from "../../../../assets/icons/sterilization/number5.svg";
+
+import quote from "../../../../assets/icons/quote.svg";
 
 const sterilizationSteps = [
   {
@@ -13,6 +20,7 @@ const sterilizationSteps = [
     title: "Обработка в дезрастворе",
     description:
       "Все инструменты замачиваются в стоматологическом дезрастворе, имеющем сертификат качества.",
+    image: step1Img,
   },
   {
     id: 2,
@@ -20,6 +28,7 @@ const sterilizationSteps = [
     title: "Промывка под проточной водой",
     description:
       "Все инструменты тщательно промываются под проточной водой для полной очистки от дезсредств.",
+    image: step2Img,
   },
   {
     id: 3,
@@ -27,6 +36,7 @@ const sterilizationSteps = [
     title: "Полная сушка",
     description:
       "Инструменты тщательно просушиваются перед термической обработкой.",
+    image: step3Img,
   },
   {
     id: 4,
@@ -47,7 +57,7 @@ const sterilizationSteps = [
 const Sterilization = () => {
   return (
     <div className={`section ${styles.sterilization}`}>
-      <div className="container">
+      <div className={`container ${styles.container}`}>
         <div className={styles.header}>
           <h2 className={styles.title}>алхимия стерильной чистоты</h2>
           <p className={styles.subtitle}>
@@ -56,20 +66,51 @@ const Sterilization = () => {
           </p>
         </div>
         <div className={styles.content}>
-          {sterilizationSteps.map((step) => (
-            <div key={step.id} className={styles.steps}>
+          <div className={styles.left}>
+            {sterilizationSteps.slice(0, 4).map((step, index) => (
+              <div key={step.id}>
+                <div className={styles.steps}>
+                  <div className={styles.step}>
+                    <img src={step.icon} alt={`Шаг ${step.id}`} />
+                    <h2 className={styles.stepTitle}>{step.title}</h2>
+                  </div>
+                  <div className={styles.stepDescription}>
+                    <p className={styles.stepSubtitle}>{step.description}</p>
+                  </div>
+                </div>
+                {index < 3 && (
+                  <div className={styles.adaptiveImage}>
+                    <img
+                      src={step.image}
+                      alt={`Изображение к шагу ${step.id}`}
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className={styles.right}>
+            <div className={styles.images}>
+              <img src={mf} alt="Процесс стерилизации" />
+            </div>
+            <div className={styles.steps}>
               <div className={styles.step}>
-                <img src={step.icon} alt={`Шаг ${step.id}`} />
-                <h2 className={styles.stepTitle}>{step.title}</h2>
+                <img src={number5} alt="Шаг 5" />
+                <h2 className={styles.stepTitle}>Хранение в УФ-шкафу</h2>
               </div>
               <div className={styles.stepDescription}>
-                <p className={styles.stepSubtitle}>{step.description}</p>
+                <p className={styles.stepSubtitle}>
+                  Стерильные инструменты хранятся в бактерицидном УФ-шкафу до
+                  использования.
+                </p>
               </div>
             </div>
-          ))}
-
-          <div className={styles.images}>
-            <img src={mf} alt="Процесс стерилизации" />
+          </div>
+        </div>
+        <div className={styles.citate}>
+          <div className={styles.citateInner}>
+            <img src={quote} alt="" />
+            <h2>чистота - наш главный ритуал</h2>
           </div>
         </div>
       </div>

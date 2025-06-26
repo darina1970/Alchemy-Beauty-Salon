@@ -18,9 +18,9 @@
 .header::after {
   content: "";
   position: absolute;
-  width: 150px;
-  height: 92px;
-  border: 3px solid #000;
+  width: clamp(50px, 10vw, 150px);
+  height: clamp(30px, 6vw, 92px);
+  border: clamp(1px, 0.3vw, 3px) solid #000;
 }
 
 .header::before {
@@ -44,37 +44,27 @@
 }
 
 .subtitle {
-  font-size: clamp(15px, 2.5vw, 36px);
+  font-size: clamp(20px, 2.5vw, 36px);
   letter-spacing: 0.02em;
 }
 
-/*Блок инфо про обработку*/
+/* Блок о стерилизации */
 .content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 597px;
   gap: 46px;
 }
 
-.stepsGroup {
+.left {
   display: flex;
   flex-direction: column;
   gap: 46px;
 }
 
-.imagesGroup {
+.right {
   display: flex;
   flex-direction: column;
   gap: 43px;
-  max-width: 597px;
-}
-
-.imagesGroup .steps {
-  width: 597px;
-  border: 2px solid #2e2622;
-  border-radius: 20px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 
 .steps {
@@ -84,8 +74,13 @@
   border: 2px solid #2e2622;
   border-radius: 20px;
   padding: 40px;
-  width: 840px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 840px;
+}
+
+.images {
+  max-width: 597px;
+  width: 100%;
 }
 
 .step {
@@ -95,28 +90,81 @@
 }
 
 .stepTitle {
-  font-size: 36px;
+  font-size: clamp(20px, 2.5vw, 36px);
   margin-bottom: 0;
   letter-spacing: 0.01em;
 }
 
 .stepSubtitle {
-  font-size: 32px;
+  font-size: clamp(20px, 2.2vw, 32px);
   letter-spacing: 0.02em;
   color: #000;
 }
 
-.stepSubtitleFirst {
-  padding-bottom: 60px;
+.adaptiveImage {
+  display: none;
+  margin-top: 20px;
+  overflow: hidden;
 }
 
-/*Адаптив*/
-@media (max-width: 767px) {
+.adaptiveImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.citate {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: clamp(10px, 2vw, 20px) 0;
+}
+
+.citateInner {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.8vw, 21px);
+  border-bottom: 2px solid #000;
+  padding-bottom: clamp(6px, 1vw, 12px);
+  width: fit-content;
+}
+
+.citateInner img {
+  width: clamp(16px, 4vw, 32px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.citateInner h2 {
+  font-size: clamp(20px, 2.6vw, 36px);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
   .content {
+    display: flex;
     flex-direction: column;
-    gap: 15px;
   }
-}
 
-@media (max-width: 480px) {
+  .left,
+  .right {
+    gap: 30px;
+  }
+
+  .steps {
+    width: 100%;
+    max-width: 100%;
+    border: 3px solid #000000ab;
+  }
+
+  .images {
+    display: none;
+  }
+
+  .adaptiveImage {
+    display: block;
+  }
 }
