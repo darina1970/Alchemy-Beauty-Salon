@@ -6,22 +6,22 @@ import { lookPrices } from './lookPriceData';
 import look1 from "../../../assets/images/Rooms/LookRoom/look1.webp";
 
 const LookRoom = () => {
-  return (
-    <div>
-      <RoomMainScreen
-        title="комната взгляда"
-        quote="взгляд, в котором живёт сила стихий"
-        variant="light"
-        portfolio={[{ src: look1 }]}
-        useSlider={false}
-      />
-      <PriceBlock
+    return (
+        <>
+            <RoomMainScreen
+            title="комната взгляда"
+            quote="взгляд, в котором живёт сила стихий"
+            variant="light"
+            portfolio={[{ src: look1 }]}
+            useSlider={false}
+            />
+            <PriceBlock
                 pricesByTab={lookPrices}
                 theme= 'light'
                 variant='light'
             />
-    </div>
-  );
+        </>
+    );
 };
 
 export default LookRoom;

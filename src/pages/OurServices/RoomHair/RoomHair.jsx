@@ -10,13 +10,13 @@ import hair5 from "../../../assets/images/Rooms/HairRoom/hair5.webp";
 import hair6 from "../../../assets/images/Rooms/HairRoom/hair6.webp";
 
 const portfolio = [
-  { src: hair },
-  { src: hair1 },
-  { src: hair2 },
-  { src: hair3 },
-  { src: hair4 },
-  { src: hair5 },
-  { src: hair6 },
+    { src: hair },
+    { src: hair1 },
+    { src: hair2 },
+    { src: hair3 },
+    { src: hair4 },
+    { src: hair5 },
+    { src: hair6 },
 ];
 
 import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
@@ -24,24 +24,23 @@ import { hairTabs, hairPricesByTab } from './hairPriceData';
 
 
 const HairRoom = () => {
-  return (
-    <div>
-      <RoomMainScreen
-        title="комната волос"
-        quote="Сила природы в каждом локоне"
-        variant="light"
-        portfolio={portfolio}
-      />
-      <PriceBlock
+    return (
+        <>
+            <RoomMainScreen
+                title="комната волос"
+                quote="Сила природы в каждом локоне"
+                variant="light"
+                portfolio={portfolio}
+            />
+            <PriceBlock
                 tabs={hairTabs}
                 defaultTabKey='womenCuts'
                 pricesByTab={hairPricesByTab}
                 theme= 'light'
                 variant='light'
             />
-    </div>
-  );
-
+        </>
+    );
 };
 
 export default HairRoom;
