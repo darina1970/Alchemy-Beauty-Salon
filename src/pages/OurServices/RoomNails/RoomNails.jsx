@@ -14,6 +14,9 @@ const portfolio = [
   { src: nails3 },
   { src: nails4 },
 ];
+import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
+import { nailsTabs, nailsPricesByTab } from './nailsPriceData';
+
 
 const NailsRoom = () => {
   return (
@@ -23,6 +26,13 @@ const NailsRoom = () => {
         quote="алхимия цвета на кончиках пальцев"
         variant="light"
         portfolio={portfolio}
+      />
+      <PriceBlock
+          tabs={nailsTabs}
+          defaultTabKey='manicure'
+          pricesByTab={nailsPricesByTab}
+          theme= 'light'
+          variant='light'
       />
     </div>
   );

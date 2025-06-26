@@ -1,5 +1,7 @@
 import React from "react";
 import RoomMainScreen from "../../../components/Rooms/RoomMainScreen/RoomMainScreen";
+import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
+import { lookPrices } from './lookPriceData';
 
 import look1 from "../../../assets/images/Rooms/LookRoom/look1.webp";
 
@@ -13,6 +15,11 @@ const LookRoom = () => {
         portfolio={[{ src: look1 }]}
         useSlider={false}
       />
+      <PriceBlock
+                pricesByTab={lookPrices}
+                theme= 'light'
+                variant='light'
+            />
     </div>
   );
 };
