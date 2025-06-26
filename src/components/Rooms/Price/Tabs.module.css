@@ -16,13 +16,14 @@
 
 .wrap .tab {
     border-right: none;
+    border-radius: 20px;
 }
 
 .tab {
     flex: 1 1 200px;
     padding: 10px 16px;
     background-color: #f5f0e8;
-    color: #000;
+    color: var(--color-text);
     border: none;
     border-right: 1px solid #bfbfbf;
     cursor: pointer;
@@ -62,6 +63,7 @@
 
 .select {
     padding: 10px 16px;
+    padding-right: 36px;
     font-size: 16px;
     border-radius: 24px;
     border: 1px solid #bfbfbf;
@@ -69,4 +71,13 @@
     text-transform: uppercase;
     width: 100%;
     max-width: 100%;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url('../../../assets/icons/arrows/select.svg');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
 }
