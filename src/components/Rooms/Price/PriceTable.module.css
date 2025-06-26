@@ -13,12 +13,20 @@
     padding: 40px 100px;
 }
 
-.evenRow {
+.evenRow--default {
     background-color: #E6D2B8;
 }
 
-.oddRow {
+.oddRow--default {
     background-color: #D7C3A8;
+}
+
+.evenRow--tanning {
+    background-color: #EADDC6;
+}
+
+.oddRow--tanning {
+    background-color: #C7B59B;
 }
 
 .col {

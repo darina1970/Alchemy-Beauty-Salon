@@ -1,13 +1,13 @@
 import React from "react";
 import styles from './PriceTable.module.css';
 
-const PriceTable = ({ data, columns = ['Услуга', 'Цена'] }) => {
+const PriceTable = ({ data, columns = ['Услуга', 'Цена'], theme = 'default' }) => {
     const showSubHeaders = columns.length > 2;
 
     return (
         <div className={styles.priceTable}>
             {showSubHeaders && (
-                <div className={`${styles.priceRow} ${styles.evenRow}`}>
+                <div className={`${styles.priceRow} ${styles[`evenRow--${theme}`]}`}>
                     <span className={`${styles.col} ${styles.col0}`}></span>
                     {columns.slice(1).map((col, idx) => (
                         <span key={idx} className={`${styles.col} ${styles.colRight}`}>
@@ -23,7 +23,7 @@ const PriceTable = ({ data, columns = ['Услуга', 'Цена'] }) => {
                     <div
                         key={rowIndex}
                         className={`${styles.priceRow} ${
-                            isOdd ? styles.oddRow : styles.evenRow
+                            isOdd ? styles[`oddRow--${theme}`] : styles[`evenRow--${theme}`]
                         }`}
                     >
                         {columns.map((_, colIndex) => (

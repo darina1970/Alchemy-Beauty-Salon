@@ -1,11 +1,17 @@
 import React from 'react';
-
+import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
+import { tanPrices } from './tanPriceData';
 
 const TanRoom = () => {
     return (
-        <div>
-            <h1>Комната загара</h1>
-        </div>
+        <>
+            <PriceBlock
+                pricesByTab={tanPrices}
+                theme= 'dark'
+                variant='dark'
+                tableTheme='tanning'
+            />
+        </>
     );
 };
 
