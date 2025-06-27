@@ -1,60 +1,48 @@
-    .aboutContainer {
-        display: flex;
-        align-items: flex-start;
-        gap: 5%;
-        flex-wrap: wrap;
-    }
+.aboutContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 5%;
+    flex-wrap: wrap;
+}
 
-    .imageWrapper {
-        flex: 1;
-        max-width: 55vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-        order: 2;
-    }
+.textBlock {
+    flex: 1;
+    max-width: 35vw;
+}
 
-    .aboutImage {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
+.textBlock h2 {
+    margin-bottom: 60px;
+}
 
-    .textBlock {
-        flex: 1;
-        max-width: 35vw;
-        order: 3;
-    }
+.text {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
 
-    .textBlock h2 {
-        margin-bottom: 60px;
-    }
+.imageWrapper {
+    flex: 1;
+    max-width: 55vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
 
-    .text {
-        padding-top: 20px;
-        padding-bottom: 30px;
-    }
+.aboutImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
-    .mobileTitle {
-        display: none;
-    }
+.mobileTitle {
+    display: none;
+}
 
 @media (max-width: 1024px) {
     .aboutContainer {
         flex-direction: column;
         align-items: center;
-    }
-
-    .imageWrapper {
-        max-width: 90%;
-        order: 2;
-    }
-
-    .textBlock {
-        max-width: 100%;
-        text-align: left;
-        order: 3;
+        gap: 40px;
     }
 
     .mobileTitle {
@@ -68,30 +56,32 @@
     .textBlock h2 {
         display: none;
     }
+
+    .textBlock {
+        max-width: 100%;
+        text-align: left;
+        order: 3;
+    }
+
+    .imageWrapper {
+        max-width: 90%;
+        order: 2;
+    }
 }
 
 @media (max-width: 800px) {
-    .aboutContainer {
-        flex-direction: column;
-        gap: 40px;
-    }
 
     .textBlock,
     .imageWrapper {
         max-width: 80%;
     }
 
-    .imageWrapper {
-        order: 2;
-        margin: 0 auto;
-    }
-
-    .textBlock {
-        order: 3;
-    }
-
     .text {
         padding-bottom: 10px;
+    }
+
+    .imageWrapper {
+        margin: 0 auto;
     }
 }
 
