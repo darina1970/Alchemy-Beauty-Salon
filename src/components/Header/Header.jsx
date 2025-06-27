@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { usePageConfig } from '../../hooks/usePageConfig';
+import { useAutoCloseMenuOnResize } from '../../hooks/useAutoCloseMenuOnResize';
 import TabletTopHeader from './TabletTopHeader';
 import BurgerMenu from './BurgerMenu';
 import NavigationMenu from './NavigationMenu';
@@ -11,20 +12,10 @@ const Header = () => {
     const { backgroundClass, menuItems, titlePrefix } = usePageConfig();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const burgerButtonRef = useRef(null);
-
     const closeMenu = () => setIsMenuOpen(false);
     
         // Закрытие бургера при расширении экрана
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth > 920 && isMenuOpen) {
-                setIsMenuOpen(false);
-            }
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [isMenuOpen]);
+    useAutoCloseMenuOnResize(isMenuOpen, closeMenu);
 
     return (
         <header>
