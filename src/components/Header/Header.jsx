@@ -176,96 +176,152 @@
 // export default Header;
 
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import cn from 'classnames';
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import cn from 'classnames';
 
-import HeaderWithMenu from './HeaderWithMenu';
-import MenuNav from './MenuNav';
-import Socials from './Socials';
-import BurgerButton from './BurgerButton';
+// import HeaderWithMenu from './HeaderWithMenu';
+// import MenuNav from './MenuNav';
+// import Socials from './Socials';
+// import BurgerButton from './BurgerButton';
 
-import styles from './Header.module.css';
-import logo from '../../assets/logo/logo.svg';
+// import styles from './Header.module.css';
+// import logo from '../../assets/logo/logo.svg';
+// import { usePageConfig } from '../../hooks/usePageConfig';
+
+// const Header = () => {
+//     const { backgroundClass, menuItems, titlePrefix } = usePageConfig();
+
+//     return (
+//         <HeaderWithMenu
+//         containerClassName={styles.headerWrapper}
+//         backgroundClassName={styles[backgroundClass]}
+//         menuItems={menuItems}
+//         renderLogo={({ isMenuOpen, setIsMenuOpen }) => (
+//             <>
+//                 <div className={styles.tabletTopHeader}>
+//                     <div className="container">
+//                         <div className={styles.topHeaderWrapper}>
+//                             <Link to="/" className={styles.logo}>
+//                             <img src={logo} alt="Логотип" />
+//                             </Link>
+//                             <Socials />
+//                             <BurgerButton isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 <div className={styles.mobileTitleWrapper}>
+//                     <h1 className={styles.mobileTitle}>
+//                     ЛАБОРАТОРИЯ КРАСОТЫ <span className={styles.mobileTitleSpan}>АЛХИМИЯ</span>
+//                     </h1>
+//                 </div>
+
+//                 <div className={cn(styles.headerWrapper, styles[backgroundClass])}>
+//                     <div className={styles.topHeaderWrapperOverlay}>
+//                         <div className="container">
+//                             <div className={styles.topHeaderWrapper}>
+//                             <Link to="/" className={styles.logo}>
+//                                 <img src={logo} alt="Логотип" />
+//                             </Link>
+//                             <nav className={styles.nav}>
+//                                 <MenuNav menuItems={menuItems} onLinkClick={() => setIsMenuOpen(false)} />
+//                             </nav>
+//                             <Socials />
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div className="container">
+//                         <div className={styles.textBlock}>
+//                             <h1>
+//                             {titlePrefix}
+//                             <span className={styles.titleSpan}>АЛХИМИЯ</span>
+//                             </h1>
+//                             <a
+//                             href="https://dikidi.app/1640050?p=0.pi"
+//                             target="_blank"
+//                             rel="noopener noreferrer"
+//                             className={styles.btn}
+//                             >
+//                             ОНЛАЙН-ЗАПИСЬ
+//                             </a>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div className={styles.mobileButtonWrapper}>
+//                     <a
+//                         href="https://dikidi.app/1640050?p=0.pi"
+//                         target="_blank"
+//                         rel="noopener noreferrer"
+//                         className={styles.mobileButton}
+//                     >
+//                         ОНЛАЙН-ЗАПИСЬ
+//                     </a>
+//                 </div>
+//             </>
+//         )}
+//         renderMenuNav={({ menuItems, handleAnchorClick }) => (
+//             <MenuNav menuItems={menuItems} onLinkClick={handleAnchorClick} />
+//         )}
+//         />
+//     );
+// };
+
+// export default Header;
+
+
+import React, { useState, useEffect } from 'react';
 import { usePageConfig } from '../../hooks/usePageConfig';
+import TabletTopHeader from './TabletTopHeader';
+import BurgerMenu from './BurgerMenu';
+import NavigationMenu from './NavigationMenu';
+import MobileTitleWrapper from './MobileTitleWrapper';
+import MobileButtonWrapper from './MobileButtonWrapper';
+import HeaderWrapper from './HeaderWrapper';
 
 const Header = () => {
     const { backgroundClass, menuItems, titlePrefix } = usePageConfig();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const closeMenu = () => setIsMenuOpen(false);
+    
+        // Закрытие бургера при расширении экрана
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 920 && isMenuOpen) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [isMenuOpen]);
 
     return (
-        <HeaderWithMenu
-        containerClassName={styles.headerWrapper}
-        backgroundClassName={styles[backgroundClass]}
-        menuItems={menuItems}
-        renderLogo={({ isMenuOpen, setIsMenuOpen }) => (
-            <>
-                <div className={styles.tabletTopHeader}>
-                    <div className="container">
-                        <div className={styles.topHeaderWrapper}>
-                            <Link to="/" className={styles.logo}>
-                            <img src={logo} alt="Логотип" />
-                            </Link>
-                            <Socials />
-                            <BurgerButton isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
-                        </div>
-                    </div>
-                </div>
+        <header>
+            <TabletTopHeader
+                isMenuOpen={isMenuOpen}
+                setIsMenuOpen={setIsMenuOpen}
+                menuItems={menuItems}
+            />
+            
+            <BurgerMenu isOpen={isMenuOpen} onClose={closeMenu}>
+                <NavigationMenu menuItems={menuItems} onLinkClick={closeMenu} isMobile />
+            </BurgerMenu>
 
-                <div className={styles.mobileTitleWrapper}>
-                    <h1 className={styles.mobileTitle}>
-                    ЛАБОРАТОРИЯ КРАСОТЫ <span className={styles.mobileTitleSpan}>АЛХИМИЯ</span>
-                    </h1>
-                </div>
+            <MobileTitleWrapper titlePrefix={titlePrefix} />
 
-                <div className={cn(styles.headerWrapper, styles[backgroundClass])}>
-                    <div className={styles.topHeaderWrapperOverlay}>
-                        <div className="container">
-                            <div className={styles.topHeaderWrapper}>
-                            <Link to="/" className={styles.logo}>
-                                <img src={logo} alt="Логотип" />
-                            </Link>
-                            <nav className={styles.nav}>
-                                <MenuNav menuItems={menuItems} onLinkClick={() => setIsMenuOpen(false)} />
-                            </nav>
-                            <Socials />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container">
-                        <div className={styles.textBlock}>
-                            <h1>
-                            {titlePrefix}
-                            <span className={styles.titleSpan}>АЛХИМИЯ</span>
-                            </h1>
-                            <a
-                            href="https://dikidi.app/1640050?p=0.pi"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.btn}
-                            >
-                            ОНЛАЙН-ЗАПИСЬ
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.mobileButtonWrapper}>
-                    <a
-                        href="https://dikidi.app/1640050?p=0.pi"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.mobileButton}
-                    >
-                        ОНЛАЙН-ЗАПИСЬ
-                    </a>
-                </div>
-            </>
-        )}
-        renderMenuNav={({ menuItems, handleAnchorClick }) => (
-            <MenuNav menuItems={menuItems} onLinkClick={handleAnchorClick} />
-        )}
-        />
+            <HeaderWrapper backgroundClass={backgroundClass} titlePrefix={titlePrefix}>
+                <NavigationMenu menuItems={menuItems} />
+            </HeaderWrapper>
+
+            <MobileButtonWrapper />
+        </header>
     );
 };
 
 export default Header;
+
+
+
 
