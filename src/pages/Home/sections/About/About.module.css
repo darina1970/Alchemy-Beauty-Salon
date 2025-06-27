@@ -8,7 +8,6 @@
 .textBlock {
     flex: 1;
     max-width: 35vw;
-    order: 1;
 }
 
 .textBlock h2 {
@@ -16,8 +15,8 @@
 }
 
 .text {
-    padding-bottom: 30px; 
     padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .imageWrapper {
@@ -27,67 +26,67 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    order: 2;
 }
 
 .aboutImage {
     width: 100%;
     height: auto;
-    object-fit: cover; }
+    object-fit: cover;
+}
+
+.mobileTitle {
+    display: none;
+}
 
 @media (max-width: 1024px) {
-.aboutContainer {
-    flex-direction: column;
-    align-items: center;
-}
-    
-.imageWrapper {
-    max-width: 90%;
-    order: 2;
-}
-    
-.textBlock {
-    max-width: 100%;
-    order: 3;
-    text-align:left;
-}     
+    .aboutContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .mobileTitle {
+        display: block;
+        width: 80%;
+        text-align: left;
+        margin: 0 auto;
+        order: 1;
+    }
+
+    .textBlock h2 {
+        display: none;
+    }
+
+    .textBlock {
+        max-width: 100%;
+        text-align: left;
+        order: 3;
+    }
+
+    .imageWrapper {
+        max-width: 90%;
+        order: 2;
+    }
 }
 
 @media (max-width: 800px) {
-    .aboutContainer {
-        flex-direction: column;
-        gap: 40px;
-    }
 
     .textBlock,
     .imageWrapper {
         max-width: 80%;
     }
 
-h2 {
-    order: 1;
-    text-align: left;
-}
+    .text {
+        padding-bottom: 10px;
+    }
 
-.imageWrapper {
-    order: 2;
-    max-width: 80%;
-    margin: 0 auto;
-}
-    
-.textBlock {
-    order: 3;
-    max-width: 100%;
-}
-
-.text {
-    padding-bottom: 10px;
-}
+    .imageWrapper {
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 767px) {
     .aboutContainer {
-        flex-direction: column;
         gap: 20px;
     }
 
