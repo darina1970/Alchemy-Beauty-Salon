@@ -1,8 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import HeaderRoom from "../components/Header/HeaderRoom";
+// import HeaderRoom from "../components/Header/HeaderRoom";
 import FooterInner from "../components/Footer/FooterInner";
 import { usePageConfig } from "../hooks/usePageConfig";
+import HeaderLayout from "../components/Header/HeaderLayout";
 
 
 const RoomLayout = () => {
@@ -10,7 +11,7 @@ const RoomLayout = () => {
 
     return (
         <div className="layout">
-            <HeaderRoom />
+            <HeaderLayout showBanner={false} showRoomMenu={true} />
             <main>
                 <Outlet />
             </main>
