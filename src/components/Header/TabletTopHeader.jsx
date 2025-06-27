@@ -16,7 +16,7 @@ const TabletTopHeader = ({ isMenuOpen, setIsMenuOpen, burgerButtonRef }) => {
 
                     <Socials />
 
-                    <button
+                    <div
                         ref={burgerButtonRef}
                         className={cn(styles.burgerButton, { [styles.open]: isMenuOpen })}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -26,7 +26,7 @@ const TabletTopHeader = ({ isMenuOpen, setIsMenuOpen, burgerButtonRef }) => {
                         <span />
                         <span />
                         <span />
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
