@@ -256,6 +256,13 @@
     }
 }
 
+@media (min-width: 921px) {
+  .tabletTopHeader.showOnDesktop {
+    display: block;
+    padding: 20px 0;
+  }
+}
+
 @media (max-width: 920px) {
     .homeBg {
       background-image: url('/src/assets/images/Banners/Home/home-tablet.webp');
