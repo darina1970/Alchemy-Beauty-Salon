@@ -1,13 +1,14 @@
 .aboutContainer {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 5%;
-    flex-wrap: wrap;
 }
 
 .textBlock {
     flex: 1;
     max-width: 35vw;
+    order: 0;
 }
 
 .textBlock h2 {
@@ -26,6 +27,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+    order: 1;
 }
 
 .aboutImage {
@@ -36,6 +38,7 @@
 
 .mobileTitle {
     display: none;
+    order: 0;
 }
 
 @media (max-width: 1024px) {
@@ -53,8 +56,9 @@
         order: 1;
     }
 
-    .textBlock h2 {
-        display: none;
+    .imageWrapper {
+        max-width: 90%;
+        order: 2;
     }
 
     .textBlock {
@@ -63,9 +67,8 @@
         order: 3;
     }
 
-    .imageWrapper {
-        max-width: 90%;
-        order: 2;
+    .textBlock h2 {
+        display: none;
     }
 }
 
@@ -76,12 +79,12 @@
         max-width: 80%;
     }
 
-    .text {
-        padding-bottom: 10px;
-    }
-
     .imageWrapper {
         margin: 0 auto;
+    }
+
+    .text {
+        padding-bottom: 10px;
     }
 }
 
