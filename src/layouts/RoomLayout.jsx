@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-// import HeaderRoom from "../components/Header/HeaderRoom";
 import FooterInner from "../components/Footer/FooterInner";
 import { usePageConfig } from "../hooks/usePageConfig";
 import HeaderLayout from "../components/Header/HeaderLayout";
