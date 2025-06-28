@@ -11,7 +11,6 @@ const TabletTopHeader = ({
     setIsMenuOpen, 
     burgerButtonRef, 
     showOnDesktop = false, 
-    backgroundClass = '',
     menuItems = []    
 }) => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 920);
@@ -29,7 +28,7 @@ const TabletTopHeader = ({
     return (
         <div className={cn(styles.tabletTopHeader, {
             [styles.showOnDesktop]: showOnDesktop,
-            [styles[backgroundClass]]: backgroundClass
+            [styles.roomsBg]: true
         })}
         >
             <div className="container">
