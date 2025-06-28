@@ -66,43 +66,19 @@ const Sterilization = () => {
           </p>
         </div>
         <div className={styles.content}>
-          <div className={styles.left}>
-             {/* Десктопная картинка */}
-            <div className={`${styles.desktopImage} ${styles.stepImage}`}>
-              <img src={mf} alt="Процесс стерилизации" />
-            </div>
-
-            {/* Шаг 1–3 */}
-            {sterilizationSteps.slice(0, 3).map((step) => (
-              <div
-                key={step.id}
-                className={`${styles.stepWrapper} ${styles[`step${step.id}`]}`}
-              >
-                <div className={styles.steps}>
-                  <div className={styles.step}>
-                    <img src={step.icon} alt={`Шаг ${step.id}`} />
-                    <h2 className={styles.stepTitle}>{step.title}</h2>
-                  </div>
-                  <div className={styles.stepDescription}>
-                    <p className={styles.stepSubtitle}>{step.description}</p>
-                  </div>
-                </div>
-
-                {/* Адаптивная картинка для мобилки и планшета */}
-                <div className={styles.adaptiveImage}>
-                  <img src={step.image} alt={`Изображение к шагу ${step.id}`} />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.right}>
-            {/* Шаги 4 и 5 */}
-            {sterilizationSteps.slice(3, 5).map((step) => (
-              <div
-                key={step.id}
-                className={`${styles.steps} ${styles[`step${step.id}`]}`}
-              >
+          {/* Десктопная картинка */}
+          <img
+            src={mf}
+            alt="Процесс стерилизации"
+            className={styles.stepImage}
+          />
+          {/* Шаги 1–5 */}
+          {sterilizationSteps.map((step) => (
+            <div
+              key={step.id}
+              className={`${styles.stepWrapper} ${styles[`step${step.id}`]}`}
+            >
+              <div className={styles.steps}>
                 <div className={styles.step}>
                   <img src={step.icon} alt={`Шаг ${step.id}`} />
                   <h2 className={styles.stepTitle}>{step.title}</h2>
@@ -111,8 +87,16 @@ const Sterilization = () => {
                   <p className={styles.stepSubtitle}>{step.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
+              {/* Адаптивная картинка */}
+              {step.image && (
+                <img
+                  className={styles.adaptiveImage}
+                  src={step.image}
+                  alt={`Изображение к шагу ${step.id}`}
+                />
+              )}
+            </div>
+          ))}
         </div>
         <div className={styles.citate}>
           <div className={styles.citateInner}>
@@ -126,51 +110,3 @@ const Sterilization = () => {
 };
 
 export default Sterilization;
-
-/* вариант где два контейнера правый и левый
-<div className={styles.content}>
-          <div className={styles.left}>
-            {sterilizationSteps.slice(0, 4).map((step, index) => (
-              <div
-                key={step.id}
-                className={index === 0 ? styles.firstCard : ""}
-              >
-                <div className={styles.steps}>
-                  <div className={styles.step}>
-                    <img src={step.icon} alt={`Шаг ${step.id}`} />
-                    <h2 className={styles.stepTitle}>{step.title}</h2>
-                  </div>
-                  <div className={styles.stepDescription}>
-                    <p className={styles.stepSubtitle}>{step.description}</p>
-                  </div>
-                </div>
-                {index < 3 && (
-                  <div className={styles.adaptiveImage}>
-                    <img
-                      src={step.image}
-                      alt={`Изображение к шагу ${step.id}`}
-                    />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className={styles.right}>
-            <div className={styles.images}>
-              <img src={mf} alt="Процесс стерилизации" />
-            </div>
-            <div className={`${styles.steps} ${styles.fifthStep}`}>
-              {" "}
-              <div className={styles.step}>
-                <img src={number5} alt="Шаг 5" />
-                <h2 className={styles.stepTitle}>Хранение в УФ-шкафу</h2>
-              </div>
-              <div className={styles.stepDescription}>
-                <p className={styles.stepSubtitle}>
-                  Стерильные инструменты хранятся в бактерицидном УФ-шкафу до
-                  использования.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>*/
