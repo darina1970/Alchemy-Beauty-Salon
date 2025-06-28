@@ -38,6 +38,10 @@
     margin-bottom: 50px;
 }
 
+.experience {
+    font-feature-settings: "lnum";
+}
+
 .text {
     font-family: var(--font-info);
     margin-bottom: 30px;
@@ -102,10 +106,21 @@
         flex-direction: column;
     }
 
+    .header {
+        text-align: center;
+        align-items: center;
+    }
+
+    .name,
+    .experience {
+        text-align: center;   
+    }
+    
     .image {
-        width: 100%;
+        width: clamp(260px, 60vw, 360px);
         height: auto;
-        max-width: 100%;
+        margin: 0 auto;
+        display: block;
     }
 
     .content {
