@@ -11,7 +11,7 @@
 
 .image {
     height: 100%;
-    width: auto;
+    width: clamp(300px, 23.438vw, 450px);
     max-width: 450px;
     aspect-ratio: 3 / 4;
     object-fit: cover;
@@ -83,22 +83,19 @@
 }
 
 .button {
-    padding: 24px 90px;
-    font-weight: var(--font-weight-semibold);
-    width: max-content;
-    display: flex;
-    align-items: center;
+    padding: 20px 40px;
+    min-width: 240px;
+    white-space: nowrap;
     justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 20px;
 }
 
 @media (max-width: 950px) {
     .wrapper {
         gap: 30px;
     }
-
-    .button {
-        padding: 20px 40px;
-    } 
 }
 
 @media (max-width: 768px) {
@@ -127,13 +124,15 @@
         padding-top: 30px;
     }
 
-    .button {
-        width: 100%;
-        padding: 20px 40px;
-    }
-
     .buttons {
         flex-direction: column;
         gap: 12px;
-    } 
+        align-items: center;
+    }
+
+    .button {
+        padding: 13px 30px;
+        font-size: 16px;
+        border-radius: 20px;   
+    }
 }
