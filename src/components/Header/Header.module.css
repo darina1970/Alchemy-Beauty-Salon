@@ -134,15 +134,15 @@
 
 /* Фоны */
 .homeBg {
-  background-image: url('/src/assets/images/Banners/Home/home-desktop.webp');
+  background-image: url('/images/Banners/Home/home-desktop.webp');
 }
 
 .mastersBg {
-  background-image: url('/src/assets/images/Banners/Masters/masters-desktop.webp');
+  background-image: url('/images/Banners/Masters/masters-desktop.webp');
 }
 
 .servicesBg {
-  background-image: url('/src/assets/images/Banners/Services/services-desktop.webp');
+  background-image: url('/images/Banners/Services/services-desktop.webp');
 }
 
 .roomsBg {
@@ -254,6 +254,9 @@
       gap: 30px;
       width: 40%;
     }
+    .btn {
+      padding: 13px 50px;
+    }
 }
 
 @media (min-width: 921px) {
@@ -265,13 +268,13 @@
 
 @media (max-width: 920px) {
     .homeBg {
-      background-image: url('/src/assets/images/Banners/Home/home-tablet.webp');
+      background-image: url('/images/Banners/Home/home-tablet.webp');
     }
     .mastersBg {
-      background-image: url('/src/assets/images/Banners/Masters/masters-tablet.webp');
+      background-image: url('/images/Banners/Masters/masters-tablet.webp');
     }
     .servicesBg {
-      background-image: url('/src/assets/images/Banners/Services/services-tablet.webp');
+      background-image: url('/images/Banners/Services/services-tablet.webp');
     }
     .headerWrapper {
       display: flex;
@@ -330,10 +333,10 @@
     justify-content: center;
     width: 100%;
     background-color: var(--color-dark-green);
-    padding: 20px 60px;
+    padding: 20px 0;
   }
   .btn {
-    width: 70%;
+    width: 50%;
     text-align: center;
   }
 }
