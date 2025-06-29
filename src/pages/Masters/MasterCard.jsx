@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MasterCard.module.css';
-import star from '/src/assets/icons/MastersPage/magicwand.svg';
+import star from '../../assets/icons/MastersPage/magicwand.svg';
 
 const MasterCard = ({ variant, name, description, title, content, image, links }) => {
   return (
