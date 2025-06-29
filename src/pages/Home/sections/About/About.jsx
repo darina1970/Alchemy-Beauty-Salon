@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './About.module.css';
-import owner from "/src/assets/images/HomeImg/AboutImg/owner.png";
+import owner from "../../../../assets/images/HomeImg/AboutImg/owner.png";
 
 const About = ({ variant }) => {
   return (

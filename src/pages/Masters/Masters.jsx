@@ -2,6 +2,11 @@ import React from 'react';
 import MainLayout from '../../layouts/MainLayout';
 import { headerConfigs } from '../../config/headerConfigs';
 import MasterCard from './MasterCard';
+import master1 from '../../assets/images/MasterPage/master-img1.webp';
+import master2 from '../../assets/images/MasterPage/master-img2.webp';
+import master3 from '../../assets/images/MasterPage/master-img3.webp';
+import master4 from '../../assets/images/MasterPage/master-img4.webp';
+import master5 from '../../assets/images/MasterPage/master-img5.webp';
 
 
 const masters = [
@@ -13,7 +18,7 @@ const masters = [
         { type: 'paragraph', text: 'Индивидуальный подбор цвета и техники окрашивания исходя из особенностей цветотипа и других внешних и внутренних данных клиента.' },
         { type: 'paragraph', text: 'Окрашивания любой сложности — эксперт по сложным техникам, выход из черного, смывки, преподаватель, создатель авторского курса "Колорист с нуля".' }
       ],
-      image: '/src/assets/images/MasterPage/master-img1.webp',
+      image: master1,
       variant: 'light',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
@@ -28,7 +33,7 @@ const masters = [
         { type: 'paragraph', text: 'Стрижки мужские, женские, окрашивания любой сложности,  биозавивка.' },
         { type: 'paragraph', text: 'Постоянные обучения и повышения квалификации, высокий уровень мастерства.' }
       ],
-      image: '/src/assets/images/MasterPage/master-img2.webp',
+      image: master2,
       variant: 'dark',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
@@ -44,7 +49,7 @@ const masters = [
         { type: 'paragraph', text: 'Окрашивания любой сложности, эксперт по работе с блондом' },
         { type: 'quote', text: 'Некрасивых женщин не бывает, бывают те, кто неправильно выбрал мастера по волосам.' }
       ],
-      image: '/src/assets/images/MasterPage/master-img3.webp',
+      image: master3,
       variant: 'light',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
@@ -61,7 +66,7 @@ const masters = [
         { type: 'paragraph', text: 'Женские стрижки на длинные волосы, идеальное каре, окрашивания волос.' },
         { type: 'quote', text: 'Подберу лучший вариант стрижки и окрашивания, согласно структуре волос и цветотипу клиента' }
       ],
-      image: '/src/assets/images/MasterPage/master-img4.webp',
+      image: master4,
       variant: 'dark',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
@@ -75,7 +80,7 @@ const masters = [
         content: [
           { type: 'paragraph', text: 'Индивидуальный подбор цвета и техники окрашивания исходя из особенностей цветотипа и других внешних и внутренних данных клиента.' },
         ],
-        image: '/src/assets/images/MasterPage/master-img5.webp',
+        image: master5,
         variant: 'light',
         links: {
           booking: 'https://dikidi.net/booking/alina-magic',
