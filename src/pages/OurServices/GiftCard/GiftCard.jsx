@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "./GiftCard.module.css";
 import certificateImage from "../../../assets/images/Services/certificate.webp";
 
@@ -17,9 +16,14 @@ const GiftCard = () => {
             alt="Подарочный сертификат"
             className={styles.image}
           />
-          <Link to="/gift" className={`btn-secondary ${styles.button}`}>
+          <a
+            href="https://wa.me/18772241042?text=Здравствуйте!%20Хочу%20узнать%20подробнее%20о%20подарочном%20сертификате."
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`btn-secondary ${styles.button}`}
+            >
             Заказать сертификат
-          </Link>
+          </a>
         </div>
       </div>
     </section>
