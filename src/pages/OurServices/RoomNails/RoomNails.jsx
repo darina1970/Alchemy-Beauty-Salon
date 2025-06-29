@@ -14,9 +14,12 @@ const portfolio = [
   { src: nails3 },
   { src: nails4 },
 ];
-import PriceBlock from '../../../components/Rooms/Price/PriceBlock';
-import { nailsTabs, nailsPricesByTab } from './nailsPriceData';
 
+import RoomGallery from "../../../components/Rooms/Gallery/RoomGallery";
+import PriceBlock from "../../../components/Rooms/Price/PriceBlock";
+import Sterilization from "../../../pages/OurServices/RoomNails/Sterilization/Sterilization";
+import nailImages from "./nailRoomImages";
+import { nailsTabs, nailsPricesByTab } from "./nailsPriceData";
 
 const NailsRoom = () => {
   return (
@@ -27,13 +30,15 @@ const NailsRoom = () => {
         variant="light"
         portfolio={portfolio}
       />
+      <RoomGallery images={nailImages} />
       <PriceBlock
-          tabs={nailsTabs}
-          defaultTabKey='manicure'
-          pricesByTab={nailsPricesByTab}
-          theme= 'light'
-          variant='light'
+        tabs={nailsTabs}
+        defaultTabKey="manicure"
+        pricesByTab={nailsPricesByTab}
+        theme="light"
+        variant="light"
       />
+      <Sterilization />
     </div>
   );
 };
