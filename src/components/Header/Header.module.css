@@ -254,6 +254,9 @@
       gap: 30px;
       width: 40%;
     }
+    .btn {
+      padding: 13px 50px;
+    }
 }
 
 @media (min-width: 921px) {
@@ -330,10 +333,10 @@
     justify-content: center;
     width: 100%;
     background-color: var(--color-dark-green);
-    padding: 20px 60px;
+    padding: 20px 0;
   }
   .btn {
-    width: 70%;
+    width: 50%;
     text-align: center;
   }
 }
