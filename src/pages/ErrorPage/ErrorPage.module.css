@@ -10,31 +10,23 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    height: 70vh;
+    width: auto;
+    aspect-ratio: 2 / 3;
+    animation: slideIn 2s ease-out forwards;
 }
 
 .textWrapper {
     position: absolute;
-    left: -20%;
-    bottom: 85%;
+    right: 30%;
+    bottom: calc(100% + 25px);
+    width: 80%;
     max-width: 429px;
     padding: 20px 15px;
     border-radius: 20px;
     background: #B58D56;
     animation: slideInText 1.2s ease-out 2s forwards;
     opacity: 0;
-}
-
-.textWrapper:after {
-    content: '';
-    background: url("../../assets/icons/triangle.svg") center / cover no-repeat;
-    position: absolute;
-    bottom: -25px;
-    right: 90px;
-    width: 30px;
-    height: 25.5px;
-}
-
-.text {
     color: #000;
     text-align: center;
     font-family: var(--font-info);
@@ -43,11 +35,19 @@
     letter-spacing: 0.48px;
 }
 
+.textWrapper:after {
+    content: '';
+    background: url("../../assets/icons/triangle.svg") center / cover no-repeat;
+    position: absolute;
+    bottom: -25px;
+    left: 70%;
+    width: 30px;
+    height: 25.5px;
+}
+
 .image {
-    position: relative;
-    width: 600px;
-    aspect-ratio: 1/1.5;
-    animation: slideIn 2s ease-out forwards;
+    height: 100%;
+    width: auto;
 }
 
 .button {
@@ -70,15 +70,10 @@
 }
 
 .button:hover {
-    background: #333;
+    background: #314f3e;
 }
 
 @keyframes slideInText {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
     to {
         transform: translateY(0);
         opacity: 1;
@@ -87,45 +82,26 @@
 
 @keyframes slideIn {
     from {
-        right: -400px;
-        opacity: 0;
+        transform: translateX(100%);
     }
 
     to {
-        right: 0;
-        opacity: 1;
+        transform: translateX(0%);
     }
 }
 
-@media (max-width: 1600px) {
-    .textWrapper {
-        left: -25%;
-    }
-
-    .image {
-        width: 500px;
-    }
-}
-
-@media (max-width: 1400px) {
-    .textWrapper {
-        left: -20%;
-    }
-
-    .image {
-        width: 400px;
-    }
-}
-
-@media (max-width: 767px) {
+@media (max-width: 575px) {
     .textWrapper {
         max-width: 300px;
-        left: -5%;
-        bottom: 90%;
+        right: 10%;
     }
 
-    .image,
+    .image {
+        width: 100%;
+    }
+
     .button {
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
     }
 }
