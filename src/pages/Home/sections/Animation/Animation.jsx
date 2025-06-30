@@ -42,7 +42,6 @@ const Animation = ({ variant }) => {
                     <text
                         x="50%"
                         y="50%"
-                        // dominantBaseline="middle"
                         textAnchor="middle"
                         alignmentBaseline="middle"
                         dy='0.1em'
