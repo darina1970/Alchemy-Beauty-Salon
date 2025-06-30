@@ -196,6 +196,10 @@ h2 {
     background-color: var(--color-btn-secondary-bg-hover);
 }
 
+.slick-list {
+    border-radius: 20px;
+}
+
 
 /* Медиазапрос для экранов с шириной больше 1200px */
 @media (min-width: 1200px) {

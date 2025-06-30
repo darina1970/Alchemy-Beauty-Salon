@@ -11,7 +11,7 @@
 
 .image {
     height: 100%;
-    width: auto;
+    width: clamp(300px, 23.438vw, 450px);
     max-width: 450px;
     aspect-ratio: 3 / 4;
     object-fit: cover;
@@ -36,6 +36,10 @@
     font-size: clamp(24px, 2vw, 40px);
     text-transform: uppercase;
     margin-bottom: 50px;
+}
+
+.experience {
+    font-feature-settings: "lnum";
 }
 
 .text {
@@ -79,37 +83,67 @@
 }
 
 .button {
-    padding: 24px 90px;
-    font-weight: var(--font-weight-semibold);
-    width: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 20px 40px;
+        min-width: 240px;
+        white-space: nowrap;
+        justify-content: center;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 20px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 950px) {
     .wrapper {
-        gap: 40px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
         flex-direction: column;
     }
 
+    .header {
+        text-align: center;
+        align-items: center;
+    }
+
+    .name,
+    .experience {
+        text-align: center;   
+    }
+    
     .image {
-        width: 100%;
+        width: clamp(260px, 60vw, 360px);
         height: auto;
-        max-width: 100%;
+        margin: 0 auto;
+        display: block;
     }
 
     .content {
         padding-top: 30px;
     }
 
-    .button {
-        width: 100%;
-        padding: 20px 40px;
-    }
-
     .buttons {
         flex-direction: column;
         gap: 12px;
+        align-items: center;
+    }
+
+    .button {
+        width: 50%;
+        padding: 13px 30px;   
+    }
+}
+
+@media (max-width: 500px) {
+    .button {
+        width: 100%;
+    } 
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;   
     }
 }

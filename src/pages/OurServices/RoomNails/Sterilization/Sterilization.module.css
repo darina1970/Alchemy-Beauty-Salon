@@ -1,0 +1,242 @@
+.sterilization {
+  background-color: var(--color-bg-dark);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  padding: clamp(20px, 4vw, 47px) clamp(16px, 8vw, 168px);
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: clamp(50px, 10vw, 150px);
+  height: clamp(30px, 6vw, 92px);
+  border: clamp(1px, 0.3vw, 3px) solid #000;
+}
+
+.header::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.header::after {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: clamp(20px, 4vw, 60px) !important;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: clamp(20px, 2.5vw, 36px);
+  letter-spacing: 0.02em;
+}
+
+/* Блок о стерилизации */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 439px;
+  grid-template-areas:
+    "step1 stepImage"
+    "step2 stepImage"
+    "step3 stepImage"
+    "step4 step5";
+  gap: 46px;
+  margin: auto;
+  align-items: stretch;
+}
+
+.step1 {
+  grid-area: step1;
+}
+
+.step2 {
+  grid-area: step2;
+}
+
+.step3 {
+  grid-area: step3;
+}
+
+.step4 {
+  grid-area: step4;
+}
+
+.step5 {
+  grid-area: step5;
+}
+
+.step5 .steps {
+  padding-bottom: 14px;
+}
+
+.stepImage {
+  grid-area: stepImage;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 30px);
+  border: 2px solid #2e2622;
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 40px);
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 30px);
+}
+
+.step img {
+  width: clamp(35px, 7vw, 50px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  font-size: clamp(18px, 2.5vw, 36px);
+  margin-bottom: 0;
+  letter-spacing: 0.01em;
+}
+
+.stepSubtitle {
+  font-size: clamp(18px, 2.2vw, 32px);
+  letter-spacing: 0.02em;
+  color: #000;
+}
+
+.adaptiveImage {
+  display: none;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Блок с цитатой */
+.citate {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: clamp(10px, 2vw, 20px) 0;
+}
+
+.citateInner {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.8vw, 21px);
+  border-bottom: 2px solid #000;
+  padding-bottom: clamp(6px, 1vw, 12px);
+  width: fit-content;
+}
+
+.citateInner img {
+  width: clamp(16px, 4vw, 32px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.citateInner h2 {
+  font-size: clamp(18px, 2.604vw, 50px);
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* Адаптив */
+@media (min-width: 1200px) {
+  .step4 .steps {
+    padding-bottom: 82px;
+  }
+}
+
+@media (max-width: 1384px) {
+  .step4 .steps {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 1306px) {
+  .step5 .steps {
+    padding-bottom: 51px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .step5 .steps {
+    padding-bottom: 69px;
+  }
+}
+
+@media (max-width: 1012px) {
+  .step5 .steps {
+    padding-bottom: 92px;
+  }
+}
+
+@media (max-width: 981px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .step5 .steps {
+    padding: clamp(20px, 4vw, 40px);
+  }
+
+  .stepImage {
+    display: none;
+  }
+
+  .steps {
+    max-width: 100%;
+    border: 3px solid #000000ab;
+  }
+
+  .adaptiveImage {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .steps {
+    border: 2px solid #000000ab;
+    border-radius: 11px;
+  }
+}
+
+@media (max-width: 347px) {
+  .steps {
+    border: 1px solid #000000ab;
+  }
+
+  .citateInner {
+    flex-direction: column;
+  }
+
+  .citateInner h2 {
+    text-align: center;
+  }
+}

@@ -5,6 +5,7 @@ import hair from "../../assets/images/Services/hair.webp";
 import nails from "../../assets/images/Services/nails.webp";
 import look from "../../assets/images/Services/look.webp";
 import tan from "../../assets/images/Services/tan.webp";
+import GiftCard from "./GiftCard/GiftCard";
 import ServiceCard from "./ServiceCard";
 
 const ServicesPage = () => {
@@ -50,6 +51,8 @@ const ServicesPage = () => {
           <ServiceCard key={index} {...service} />
         ))}
       </section>
+
+      <GiftCard />
     </MainLayout>
   );
 };

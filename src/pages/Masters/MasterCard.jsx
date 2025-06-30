@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MasterCard.module.css';
-import star from '/src/assets/icons/MastersPage/magicwand.svg';
+import star from '../../assets/icons/MastersPage/magicwand.svg';
 
 const MasterCard = ({ variant, name, description, title, content, image, links }) => {
   return (
@@ -14,8 +14,8 @@ const MasterCard = ({ variant, name, description, title, content, image, links }
           <div className={styles.content}>
             <div className={styles.header}>
               <h2 className={styles.name}>{name}</h2>
-              <h2 className={styles.experience}>{title}</h2>
               <p className={styles.text}>{description}</p>
+              <h2 className={styles.experience}>{title}</h2>
             </div>
 
             <div className={styles.info}>

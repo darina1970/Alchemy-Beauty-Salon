@@ -8,11 +8,11 @@ const Tabs = ({ tabs, activeTab, onTabClick }) => {
     useEffect(() => {
         const handleResize = () => {
         const width = window.innerWidth;
-        setIsMobile(width <= 768);         // mobile: show select
-        setIsWrapMode(width <= 1290);      // wrap buttons below 1290px
+        setIsMobile(width <= 768);         
+        setIsWrapMode(width <= 1290);      
         };
 
-        handleResize(); // initial check
+        handleResize(); 
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
