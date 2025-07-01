@@ -10,9 +10,9 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 70vh;
+    height: 65vh;
     width: auto;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 83 / 99;
     animation: slideIn 2s ease-out forwards;
 }
 
@@ -91,9 +91,14 @@
 }
 
 @media (max-width: 575px) {
+    .nymphBlock {
+        height: 60vh;
+    }
+
     .textWrapper {
         max-width: 300px;
         right: 10%;
+        width: 90%;
     }
 
     .image {
