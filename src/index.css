@@ -67,6 +67,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Cormorant Upright';
+    src: url('/fonts/CormorantUpright/CormorantUpright-Bold.woff2') format('woff2'),
+        url('/fonts/CormorantUpright/CormorantUpright-Bold.woff') format('woff'),
+        url('/fonts/CormorantUpright/CormorantUpright-Bold.ttf') format('truetype'),
+        url('/fonts/CormorantUpright/CormorantUpright-Bold.eot') format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     /* Шрифты */
@@ -76,12 +86,14 @@
     --font-menu: 'Jura', sans-serif;
     /* Шрифт для технической информации */
     --font-info: 'Manrope', sans-serif;
+    /* Шрифт для анимации */
+    --font-animation: 'Cormorant Upright', sans-serif;
 
     /* Веса шрифтов */
     --font-weight-regular: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    
+
     /* Цвета */
     --color-bg-light: #EBDCC7;
     --color-bg-dark: #E2D2BA;
@@ -112,9 +124,9 @@ body {
 }
 
 .container {
-    width: 100%;  
-    margin: 0 auto;      
-    padding: 0 20px;      
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
@@ -126,8 +138,28 @@ body {
     padding-bottom: 125px;
 }
 
-h2, h3, h4, h5 {
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout main {
+    flex: 1;
+}
+
+h2,
+h3,
+h4,
+h5 {
     margin-bottom: 90px;
+}
+
+h2 {
+    font-size: clamp(20px, 2.604vw, 50px);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Кнопки на главной странице */
@@ -137,8 +169,8 @@ h2, h3, h4, h5 {
     text-transform: uppercase;
     border: 1px solid var(--color-text);
     border-radius: 20px;
-    padding: 12px 24px;
-    font-size: 22px;
+    /* padding: 12px 24px; */
+    font-size: clamp(18px, 1.146vw, 22px);
     transition: all 0.3s ease;
 }
 
@@ -153,9 +185,10 @@ h2, h3, h4, h5 {
     text-transform: uppercase;
     border: 1px solid var(--color-btn-secondary-stroke);
     border-radius: 20px;
-    padding: 12px 24px;
-    font-size: 22px;
+    /* padding: 12px 24px; */
+    font-size: clamp(18px, 1.146vw, 22px);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-secondary:hover {
@@ -163,20 +196,24 @@ h2, h3, h4, h5 {
     background-color: var(--color-btn-secondary-bg-hover);
 }
 
-/* Медиазапрос для экранов с шириной больше 1600px */
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1600px; 
-        padding: 0 40px;   
-    }
+.slick-list {
+    border-radius: 20px;
 }
 
 
 /* Медиазапрос для экранов с шириной больше 1200px */
 @media (min-width: 1200px) {
     .container {
-        max-width: 1400px; 
-        padding: 0 30px;  
+        max-width: 1460px;
+        padding: 0 30px;
+    }
+}
+
+/* Медиазапрос для экранов с шириной больше 1600px */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1680px;
+        padding: 0 40px;
     }
 }
 
@@ -184,21 +221,31 @@ h2, h3, h4, h5 {
 /* Медиазапрос для экранов с шириной меньше 768px (планшеты) */
 @media (max-width: 767px) {
     .container {
-        padding: 0 15px;   
+        padding: 0 15px;
     }
-    h2, h3, h4, h5 {
+
+    h2,
+    h3,
+    h4,
+    h5 {
         margin-bottom: 30px;
     }
+
+    h2 {
+        letter-spacing: 0.4px;
+    }
+
     .section {
-    padding-top: 50px;
-    width: 100%;
-    padding-bottom: 50px;
-}
+        padding-top: 50px;
+        width: 100%;
+        padding-bottom: 50px;
+    }
 }
 
 /* Медиазапрос для экранов с шириной меньше 480px (мобильные устройства) */
 @media (max-width: 480px) {
     .container {
-        padding: 0 10px;   
+        padding: 0 10px;
     }
+    
 }

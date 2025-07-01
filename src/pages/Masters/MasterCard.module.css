@@ -1,0 +1,149 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 90px;
+    min-height: 100%;
+}
+
+.imageWrapper {
+    flex-shrink: 0;
+}
+
+.image {
+    height: 100%;
+    width: clamp(300px, 23.438vw, 450px);
+    max-width: 450px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 60px;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.name,
+.experience {
+    font-family: var(--font-base);
+    font-weight: var(--font-weight-bold);
+    font-size: clamp(24px, 2vw, 40px);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.experience {
+    font-feature-settings: "lnum";
+}
+
+.text {
+    font-family: var(--font-info);
+    margin-bottom: 30px;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.quote {
+    font-family: var(--font-base);
+    font-style: italic;
+    font-size: clamp(20px, 1.8vw, 30px);
+    opacity: 0.85;
+    margin: 16px 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.info {
+    flex-grow: 1;
+}
+
+.buttons {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.button {
+    padding: 20px 40px;
+        min-width: 240px;
+        white-space: nowrap;
+        justify-content: center;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 20px;
+}
+
+@media (max-width: 950px) {
+    .wrapper {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .header {
+        text-align: center;
+        align-items: center;
+    }
+
+    .name,
+    .experience {
+        text-align: center;   
+    }
+    
+    .image {
+        width: clamp(260px, 60vw, 360px);
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .content {
+        padding-top: 30px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .button {
+        width: 50%;
+        padding: 13px 30px;   
+    }
+}
+
+@media (max-width: 500px) {
+    .button {
+        width: 100%;
+    } 
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;   
+    }
+}

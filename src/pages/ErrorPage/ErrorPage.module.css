@@ -1,0 +1,112 @@
+.container {
+    background: url('../../assets/images/ErrorPage/error-bg.png') center / cover no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.nymphBlock {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 65vh;
+    width: auto;
+    aspect-ratio: 83 / 99;
+    animation: slideIn 2s ease-out forwards;
+}
+
+.textWrapper {
+    position: absolute;
+    right: 30%;
+    bottom: calc(100% + 25px);
+    width: 80%;
+    max-width: 429px;
+    padding: 20px 15px;
+    border-radius: 20px;
+    background: #B58D56;
+    animation: slideInText 1.2s ease-out 2s forwards;
+    opacity: 0;
+    color: #000;
+    text-align: center;
+    font-family: var(--font-info);
+    font-size: clamp(18px, 1.25vw, 24px);
+    line-height: normal;
+    letter-spacing: 0.48px;
+}
+
+.textWrapper:after {
+    content: '';
+    background: url("../../assets/icons/triangle.svg") center / cover no-repeat;
+    position: absolute;
+    bottom: -25px;
+    left: 70%;
+    width: 30px;
+    height: 25.5px;
+}
+
+.image {
+    height: 100%;
+    width: auto;
+}
+
+.button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    padding: 23px 27px;
+    border-radius: 20px;
+    border: 1px solid #DFBA7A;
+    background: #0F231A;
+    color: #DDB565;
+    font-size: clamp(18px, 1.25vw, 24px);
+    font-weight: 600;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #314f3e;
+}
+
+@keyframes slideInText {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@media (max-width: 575px) {
+    .nymphBlock {
+        height: 60vh;
+    }
+
+    .textWrapper {
+        max-width: 300px;
+        right: 10%;
+        width: 90%;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .button {
+        max-width: 300px;
+        width: 100%;
+    }
+}

@@ -6,6 +6,10 @@
   color: white;
 }
 
+.roomHeaderWrapper {
+  padding: 20px 0;
+}
+
 .tabletTopHeader {
   display: none;
 }
@@ -13,6 +17,7 @@
 .mobileButtonWrapper {
   display: none;
 }
+
 
 .mobileTitleWrapper {
   display: none;
@@ -30,6 +35,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logoImg {
+  width: 100px;
+  height: auto;
+  aspect-ratio: 1/1;
 }
 
 .nav ul {
@@ -72,7 +83,7 @@
 
 .socialIcon {
   aspect-ratio: 1/1;
-  width: 60px;
+  width: 40px;
   height: auto;
 }
 
@@ -123,15 +134,19 @@
 
 /* Фоны */
 .homeBg {
-  background-image: url('/src/assets/images/Banners/Home/home-desktop.webp');
+  background-image: url('/images/Banners/Home/home-desktop.webp');
 }
 
 .mastersBg {
-  background-image: url('/src/assets/images/Banners/Masters/masters-desktop.webp');
+  background-image: url('/images/Banners/Masters/masters-desktop.webp');
 }
 
 .servicesBg {
-  background-image: url('/src/assets/images/Banners/Services/services-desktop.webp');
+  background-image: url('/images/Banners/Services/services-desktop.webp');
+}
+
+.roomsBg {
+  background-color: var(--color-dark-green);
 }
 
 /* Бургер меню */
@@ -140,7 +155,8 @@
   height: 40px;
   background-color: #041F34;
   border-radius: 10px;
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -234,14 +250,31 @@
       height: 600px;
     }
     .textBlock {
-      margin-top: 60px;
+      margin-top: 40px;
+      gap: 30px;
       width: 40%;
     }
+    .btn {
+      padding: 13px 50px;
+    }
+}
+
+@media (min-width: 921px) {
+  .tabletTopHeader.showOnDesktop {
+    display: block;
+    padding: 20px 0;
+  }
 }
 
 @media (max-width: 920px) {
     .homeBg {
-      background-image: url('/src/assets/images/Banners/Home/home-tablet.webp');
+      background-image: url('/images/Banners/Home/home-tablet.webp');
+    }
+    .mastersBg {
+      background-image: url('/images/Banners/Masters/masters-tablet.webp');
+    }
+    .servicesBg {
+      background-image: url('/images/Banners/Services/services-tablet.webp');
     }
     .headerWrapper {
       display: flex;
@@ -270,6 +303,12 @@
       padding: 13px 30px;
       width: 90%;
     }
+    .navRoom {
+      display: none;
+    }
+    .burgerButton {
+      display: flex;
+    }
 }
 
 @media (max-width: 769px) {
@@ -277,12 +316,14 @@
     display: none;
   }
   .mobileTitleWrapper {
+    padding: 10px 0;
     display: block;
     background-color: var(--color-dark-green);
   }
   .mobileTitle {
     text-align: center;
     color: #E3CC9D;
+    line-height: 1.2;
   }
   .mobileTitleSpan {
     color: #DFBA7A;
@@ -292,10 +333,10 @@
     justify-content: center;
     width: 100%;
     background-color: var(--color-dark-green);
-    padding: 20px 60px;
+    padding: 20px 0;
   }
   .btn {
-    width: 60%;
+    width: 50%;
     text-align: center;
   }
 }
