@@ -4,10 +4,11 @@ import MastersPage from "../pages/Masters/Masters";
 import ServicesPage from "../pages/OurServices/OurServices";
 import RoomLayout from "../layouts/RoomLayout";
 import HairRoom from "../pages/OurServices/RoomHair/RoomHair";
-import NailsRoom from '../pages/OurServices/RoomNails/RoomNails';
-import LookRoom from '../pages/OurServices/RoomLook/RoomLook';
+import NailsRoom from "../pages/OurServices/RoomNails/RoomNails";
+import LookRoom from "../pages/OurServices/RoomLook/RoomLook";
 import TanRoom from "../pages/OurServices/RoomTan/RoomTan";
 import ScrollToHash from "../components/ScrollToHash";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const AppRouter = () => {
     return(
@@ -24,10 +25,10 @@ const AppRouter = () => {
                     <Route path="/services/tan" element={<TanRoom />} />
                 </Route>
 
-                {/* <Route path="*" element={<NotFound />} /> */}
-            </Routes>
-        </BrowserRouter>
-    );
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default AppRouter;
