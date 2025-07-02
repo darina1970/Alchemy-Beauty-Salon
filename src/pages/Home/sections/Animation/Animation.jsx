@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import forestVideo from "/videos/forestVideo.mp4";
 import styles from "./Animation.module.css";
 
 const Animation = ({ variant }) => {
@@ -7,9 +8,9 @@ const Animation = ({ variant }) => {
     useEffect(() => {
         const handleResize = () => {
         const width = window.innerWidth;
-        if (width < 480) setFontSize(90);
-        else if (width < 768) setFontSize(100);
-        else if (width < 1200) setFontSize(120);
+        if (width < 480) setFontSize(120);
+        else if (width < 768) setFontSize(130);
+        else if (width < 1200) setFontSize(140);
         else setFontSize(140);
         };
 
@@ -19,11 +20,11 @@ const Animation = ({ variant }) => {
     }, []);
 
     return (
-        <section id="animation" className={`${styles.section} ${styles[`section-${variant}`]}`}>
+        <section id="animation" className={`section-${variant}`}>
             <div className={styles.container}>
                 <video
                 className={styles.video}
-                src="/videos/forestVideo.mp4"
+                src={forestVideo}
                 autoPlay
                 muted
                 loop
@@ -67,3 +68,5 @@ const Animation = ({ variant }) => {
 };
 
 export default Animation;
+
+

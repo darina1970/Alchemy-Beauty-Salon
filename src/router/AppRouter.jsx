@@ -25,10 +25,10 @@ const AppRouter = () => {
                     <Route path="/services/tan" element={<TanRoom />} />
                 </Route>
 
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+                <Route path="*" element={<ErrorPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default AppRouter;
