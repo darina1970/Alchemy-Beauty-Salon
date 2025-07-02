@@ -9,7 +9,7 @@ const GiftCard = () => {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Подарочный сертификат</h2>
           <p className={styles.text}>
-            Волшебство — лучший подарок. Дарите близким возможность превратиться с головы до пят в студии АЛХИМИЯ. И пусть их преображение начнётся с красивого жеста.
+            Подарите себе и близким заботу, красоту и волшебство — выберите сертификат на любую услугу салона «Алхимия».
           </p>
           <img
             src={certificateImage}
@@ -17,7 +17,7 @@ const GiftCard = () => {
             className={styles.image}
           />
           <a
-            href="https://wa.me/18772241042?text=Здравствуйте!%20Хочу%20узнать%20подробнее%20о%20подарочном%20сертификате."
+            href="https://wa.me/79876543210?text=Здравствуйте!%20Хочу%20узнать%20подробнее%20о%20подарочном%20сертификате."
             target="_blank"
             rel="noopener noreferrer"
             className={`btn-secondary ${styles.button}`}
