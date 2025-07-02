@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainLayout from "../../layouts/MainLayout";
 import { headerConfigs } from "../../config/headerConfigs";
 import hair from "../../assets/images/Services/hair.webp";
@@ -7,6 +7,11 @@ import look from "../../assets/images/Services/look.webp";
 import tan from "../../assets/images/Services/tan.webp";
 import GiftCard from "./GiftCard/GiftCard";
 import ServiceCard from "./ServiceCard";
+
+const servicesBackgrounds = [
+    '/images/Banners/Services/services-desktop.webp',
+    '/images/Banners/Services/services-tablet.webp',
+];
 
 const ServicesPage = () => {
   const services = [
@@ -44,17 +49,26 @@ const ServicesPage = () => {
     },
   ];
 
-  return (
-    <MainLayout headerProps={headerConfigs.services}>
-      <section className="services">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
-      </section>
+  // Прелоад баннеров
+  
+    useEffect(() => {
+      servicesBackgrounds.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    }, []);
 
-      <GiftCard />
-    </MainLayout>
-  );
+    return (
+      <MainLayout headerProps={headerConfigs.services}>
+        <section className="services">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </section>
+
+        <GiftCard />
+      </MainLayout>
+    );
 };
 
 export default ServicesPage;

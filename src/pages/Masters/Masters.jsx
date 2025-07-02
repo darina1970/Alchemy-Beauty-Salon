@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MainLayout from '../../layouts/MainLayout';
 import { headerConfigs } from '../../config/headerConfigs';
 import MasterCard from './MasterCard';
@@ -88,8 +88,26 @@ const masters = [
         },
       },
   ];
+
+  const mastersBackgrounds = [
+  '/images/Banners/Masters/masters-desktop.webp',
+  '/images/Banners/Masters/masters-tablet.webp',
+];
+
+
   
 const MastersPage = () => {
+
+  // Прелоад баннеров
+  
+    useEffect(() => {
+      mastersBackgrounds.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    }, []);
+  
+
     return (
         <MainLayout headerProps={headerConfigs.masters}>
             <section className="masters">

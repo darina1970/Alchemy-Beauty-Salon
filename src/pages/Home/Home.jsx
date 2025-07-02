@@ -11,8 +11,22 @@ import Reviews from "./sections/Reviews/Reviews";
 import { headerConfigs } from "../../config/headerConfigs";
 import { useLocation } from "react-router-dom";
 
+const homeBackgrounds = [
+  '/images/Banners/Home/home-desktop.webp',
+  '/images/Banners/Home/home-tablet.webp',
+];
+
 const HomePage = () => {
   const location = useLocation();
+
+// Прелоад баннеров
+
+  useEffect(() => {
+    homeBackgrounds.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   useEffect(() => {
     const scrollToId = location.state?.scrollToId;
