@@ -22,7 +22,7 @@ const masters = [
       variant: 'light',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
-        whatsapp: 'https://wa.me/79876543210',
+        whatsapp: 'https://wa.me/79137835046',
       },
     },
     {
@@ -37,7 +37,7 @@ const masters = [
       variant: 'dark',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
-        whatsapp: 'https://wa.me/79876543210',
+        whatsapp: 'https://wa.me/79137835046',
       },
     },
     {
@@ -53,7 +53,7 @@ const masters = [
       variant: 'light',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
-        whatsapp: 'https://wa.me/79876543210',
+        whatsapp: 'https://wa.me/79137835046',
       },
     },
     {
@@ -70,7 +70,7 @@ const masters = [
       variant: 'dark',
       links: {
         booking: 'https://dikidi.net/booking/alina-magic',
-        whatsapp: 'https://wa.me/79876543210',
+        whatsapp: 'https://wa.me/79137835046',
       },
     },
     {
@@ -84,7 +84,7 @@ const masters = [
         variant: 'light',
         links: {
           booking: 'https://dikidi.net/booking/alina-magic',
-          whatsapp: 'https://wa.me/79876543210',
+          whatsapp: 'https://wa.me/79137835046',
         },
       },
   ];

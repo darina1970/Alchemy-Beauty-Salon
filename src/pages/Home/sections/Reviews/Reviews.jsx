@@ -108,10 +108,10 @@ const Reviews = ({ variant }) => {
         <p className={styles.reviewText}>БЛАГОДАРЯ ВАМ МЫ СТАНОВИМСЯ ЕЩЁ ЛУЧШЕ!</p>
 
         <div className={styles.linkButtons}>
-          <a href="https://2gis.ru" target="_blank" rel="noreferrer">
+          <a href="https://2gis.ru/novosibirsk/search/%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA/firm/141265769680977/82.900785%2C55.060283?m=82.900806%2C55.060264%2F17.29" target="_blank" rel="noreferrer">
             <img src={gisIcon} alt="2GIS" className={styles.linkIcon} />
           </a>
-          <a href="https://yandex.ru" target="_blank" rel="noreferrer">
+          <a href="https://yandex.ru/maps/org/alkhimiya/1090861949/reviews/?ll=82.900838%2C55.060261&z=16" target="_blank" rel="noreferrer">
             <img src={yandexIcon} alt="Яндекс" className={styles.linkIcon} />
           </a>
         </div>
