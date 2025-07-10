@@ -74,12 +74,12 @@ npm run build
 
 ## 👥 Участники проекта
 
-| Роль                 | GitHub                                              |
-| -------------------- | --------------------------------------------------- |
-| Тимлид               | [Daria Semina](https://github.com/darina1970)       |
-| Фронтенд-разработчик | [Daria Demidova](https://github.com/dariaSDemidova) |
-| Фронтенд-разработчик | [Alena Elhel](https://github.com/ochumenno66)       |
-| Фронтенд-разработчик | [Ninima1218](https://github.com/Ninima1218)         |
+| Роль                   | GitHub                                              |
+| ---------------------- | --------------------------------------------------- |
+| Тимлид/Фронтенд/Дизайн | [Daria Semina](https://github.com/darina1970)       |
+| Фронтенд-разработчик   | [Daria Demidova](https://github.com/dariaSDemidova) |
+| Фронтенд-разработчик   | [Alena Elhel](https://github.com/ochumenno66)       |
+| Фронтенд-разработчик   | [Nino Markarova](https://github.com/Ninima1218)     |
 
 ## 📩 Связь
 
